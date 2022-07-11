@@ -1,0 +1,734 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@500;600&display=swap');
+
+/*******VARIAVEIS DE CORES*******/
+
+:root {
+  --maincolor: rgb(0, 0, 0);
+  --maincolortransp: rgba(28,28,28);
+  --maincolor2: rgb(255, 255, 255);
+  --maincolor3: rgb(101, 160, 104);
+   --text-color: rgb(255, 255, 255);
+  --hovertext-color: rgb(32, 192, 0);
+  --border-color: rgb(64, 131, 84);
+
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  background-color: rgb(0, 0, 0);
+
+   
+}
+
+hr {
+  height: 15px;
+  background-color: rgb(30, 30, 30);
+  border: rgb(26, 26, 26);
+  margin: 0;
+  
+}
+
+/******************ANIMAÇÕES********************/
+
+/*TRANSLATE 3D*/
+/*** Obs:
+- Eixo X (Horizontal)
+- Eixo Y (Vertical)
+- Eixo Z (3D) **/
+
+
+[data-anime] {
+  opacity: 0;
+  transition: 0.4s;
+}
+
+[data-anime="left"]{
+transform: translate3d(-30px, 0, 0);
+}
+
+
+[data-anime="right"]{
+  transform: translate3d(10px, 0, 0);
+}
+
+[data-anime="top"]{
+  transform: translate3d(0, -30px, 0);
+}
+
+[data-anime="bottom"]{
+  transform: translate3d(0, 30px, 0);
+}
+
+
+[data-anime].animate {
+opacity: 1;
+transform: translate3d(0px, 0px, 0px);
+}
+
+
+/*******************  HEADER  *****************************/
+.logoHeader {
+    width: 125px;
+}
+
+.logoHeader:hover{
+  filter: drop-shadow(0 0 3px rgb(0, 204, 0));
+transition:0.3s;
+}
+
+
+.nomelogo{
+  margin-left: 20px;
+}
+
+.headercolor {
+  background-color: var(--maincolor);
+  color: var(--hovertext-color);
+
+}
+
+/**************** HOVER MENU *****************************/
+
+.navItemhvr {
+  color: var(--maincolor2);
+}
+
+.navItemhvr:hover {
+  color: var(--hovertext-color);
+}
+
+/************MARGIN TOP PRA ACERTAR O HEADER*********************/
+
+.mainConfig {
+  margin-top: 70px;
+}
+
+
+
+
+/**********************SECTION 1************************/
+
+.Section1 {
+  margin: 0;
+  padding: 0;
+  
+}
+
+.Div1Body {
+  background-color: rgba(0, 0, 0, 0.452);
+  background-image: url(./BACKG\ GREEN.jpg);
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+
+}
+
+.DivMain {
+  background-color: rgba(0, 0, 0, 0.527);
+}
+
+.DivMainText {
+  background-color: rgba(0, 0, 255, 0);
+}
+
+.MainH1 {
+
+  text-align: center;
+  color: white;
+  text-shadow: 0 0 1px black;
+}
+
+.MainP {
+  font-size: 1.4rem;
+  font-family: arial;
+  text-align: center;
+  color: white;
+  font-weight: 200;
+  padding: 10px;
+}
+
+#Email {
+  padding: 10px;
+  font-size: 1rem;
+  height: 50px;
+  min-width: 400px;
+  max-width: 500px;
+  border-radius: 5px;
+
+}
+
+#Email:focus{
+  border: 2px solid  rgb(81, 202, 0);
+ 
+
+  
+}
+
+::placeholder { 
+  color:    rgb(0, 0, 0);
+}
+
+
+
+
+
+/******* MIN WIDTH 400PX IPHONE, SMARTPHONE************/
+@media screen and (min-width: 400px) {
+  .Section1 {
+    background-color: rgba(127, 255, 212, 0);
+  }
+
+  .DivMain {
+    padding: 60px 10px 100px;
+  }
+  .MainH1 {
+    font-size: 1.8rem;
+    font-family: arial;
+    text-align: center;
+    color: white;
+  }
+
+  .MainP {
+    font-size: 1.2rem;
+  }
+
+  .LogoHeader {
+    font-size: 2rem;
+  }
+
+  .DivBotoes {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    align-content: center;
+    flex-wrap: wrap;
+  }
+
+  .BtnEntrar {
+    font-size: 0.9rem;
+    border-radius: 3px;
+    width: 55px;
+    height: 25px;
+    margin: 0 10px;
+  }
+
+  .Div2 {
+    margin: 10px;
+  }
+
+  #Idioma {
+    font-size: 0.8rem;
+    padding: 5px 10px;
+  }
+
+  .BtnVamosLa {
+    background-color: rgb(81, 202, 0);
+    color: white;
+    font-size: 1rem;
+    margin: 0;
+    border-radius: 3px;
+    border: 0;
+    width: 120px;
+    height: 50px;
+    margin-top: 20px;
+    padding: 10px 0 10px;
+  }
+  .BtnVamosLa:hover {
+    background-color: rgb(51, 128, 0);
+    color: rgb(255, 255, 255);
+  }
+
+
+ /***************************400px**************/
+
+  .Section2 {
+    background-color: rgba(201, 52, 52, 0);
+    margin: 30px 0;
+  }
+  .Div2Section2 {
+    background-color: rgba(178, 148, 206, 0);
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+    flex-direction: column;
+    padding-top: 10px;
+  }
+
+  .DivText2 {
+    background-color: rgba(255, 208, 208, 0);
+    width: 400px;
+    padding: 20px 0;
+  }
+
+ h2 {
+    color: white;
+    font-family: 'Patua One';
+    font-size: 2rem;
+    text-align: center;
+    font-weight: 700;
+  }
+
+  .DivText2 p {
+    color: white;
+    font-family: 'Yantramanav', sans-serif;
+    font-size: 1.2rem;
+    text-align: center;
+  }
+
+  .DivImgSection2 {
+    background-color: rgba(255, 255, 0, 0);
+    margin: 40px 0;
+    display: flex;
+    justify-content: space-evenly;
+  }
+
+  .ImgSection2 {
+    width: 400px;
+    border-radius: 10px;
+    filter: drop-shadow(0 0 5px greenyellow);
+  }
+
+
+
+  .Section3 {
+    background-color: rgba(197, 63, 10, 0);
+    display: flex;
+    align-items: center;
+  }
+
+  .Div3Section3 {
+    padding-top: 40px;
+    margin-bottom: 40px;
+    background-color: rgba(178, 148, 206, 0);
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-evenly;
+    flex-wrap: wrap-reverse;
+    width: 100vw;
+  }
+
+  .DivLista {
+    margin-top: 30px;
+  }
+
+  .itensVantagens {
+    background-color: rgb(63, 63, 63);
+    color: rgb(197, 197, 197);
+    font-size: 1rem;
+    list-style: none;
+    padding: 5px 20px;
+    text-align: center;
+    margin-bottom: 10px;
+  }
+
+  .itensVantagens:hover {
+    color: rgb(255, 255, 255);
+    background-color: rgb(46, 46, 46);
+  }
+}
+
+
+
+
+/********************************** MIN WIDTH 800PX TABLET**********************************/
+
+@media screen and (min-width: 600px) {
+  .Section1 {
+    height: 100vh;
+  }
+
+  .MainH1 {
+    font-size: 3rem;
+    padding-top: 150px;
+  }
+
+  .MainP {
+    font-size: 1.4rem;
+  }
+
+  .LogoHeader {
+    font-size: 3rem;
+    margin-left: 55px;
+  }
+
+  #Idioma {
+    font-size: 1rem;
+    padding: 5px 10px;
+  }
+  .Div2 {
+    margin: 50px;
+  }
+  .BtnEntrar {
+    font-size: 1rem;
+
+    width: 80px;
+    height: 30px;
+    margin: 0 10px;
+  }
+
+  .DivBotoes {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    align-content: center;
+    flex-wrap: wrap;
+  }
+
+  .BtnVamosLa {
+    margin: 0;
+    width: 100px;
+    height: 50px;
+  }
+
+
+  /*******************     SECTION 2 - 800PX    *****************/
+
+  .Section2 {
+    background-color: rgb(0, 0, 0);
+    display: flex;
+    justify-content: center;
+    padding: 50px 20px 0;
+    margin: 40px 0 0;
+  }
+  .Div2Section2 {
+    background-color: rgba(178, 148, 206, 0);
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-evenly;
+    flex-wrap: wrap;
+    width: 100vw;
+  }
+
+  .DivText2 {
+    background-color: rgba(148, 206, 165, 0);
+    padding: 30px 0;
+    margin-bottom: 30px;
+    width: 500px;
+  }
+
+   h2 {
+    font-size: 3.5rem;
+  }
+
+ p {
+    font-size: 1.5rem;
+  }
+
+  .ImgSection2 {
+    width: 500px;
+  }
+
+  .DivImgSection2 {
+    background-color: rgba(255, 255, 0, 0);
+  }
+
+
+  /*********************    SECTION   3    - 800px    *********************************/
+  .Section3 {
+    background-color: rgba(255, 72, 0, 0);
+    display: flex;
+    justify-content: center;
+    padding: 50px 20px;
+  }
+
+  .Div3Section3 {
+    background-color: rgba(178, 148, 206, 0);
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-evenly;
+    flex-wrap: wrap-reverse;
+    width: 100vw;
+  }
+
+  .DivLista {
+    margin-top: 30px;
+  }
+
+  .itensVantagens {
+    background-color: rgb(63, 63, 63);
+    color: rgb(197, 197, 197);
+    font-size: 2rem;
+    list-style: none;
+
+    padding: 5px 20px;
+    text-align: left;
+    margin-bottom: 10px;
+  }
+
+  .itensVantagens:hover {
+    color: rgb(255, 255, 255);
+    background-color: rgb(46, 46, 46);
+  }
+
+  .InfoFooter {
+    color: white;
+    text-align: center;
+  }
+}
+
+
+
+/*************************VIDEO*************************************/
+
+  .LogoMain{
+    width: 300px;
+    margin-top: 50px;
+    
+    }
+
+    .LogoMain:hover{
+filter: drop-shadow(0 0 3px greenyellow);
+transition: 0.4s;
+      
+      }
+
+
+@media screen and (max-width: 600px) {
+  .title-slider {
+    font-size: 20px;
+    padding: 0;
+  }
+  
+    
+}
+.box-slider {
+
+  padding: 100px 100px;
+    color: #Fff;
+    position: relative;
+    width: 100%;
+    min-height: 95vh;
+    display: flex;
+    justify-content: center;
+    text-align: center;
+    background-color: rgb(0, 0, 0);
+}
+
+@media (max-width: 480px) {
+  .box-slider .content span {
+      font-size: 2.4rem;
+  }
+
+}
+
+@media screen and (max-width: 600px) {
+  .title-slider {
+    font-size: 20px;
+    padding: 0;
+  }
+
+}
+
+@media (max-width: 1040px) {
+  .box-slider {
+      padding: 100px 50px;
+  }
+
+
+  
+}
+
+
+
+.box-slider video {
+    z-index: 000;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 50%;
+    object-position: center;
+    object-fit: cover;
+}
+.video-slide {
+    position: absolute;
+    width: 100%;
+    clip-path: circle(0.3% at 0 50%);
+}
+.video-slide.active {
+    clip-path: circle(150% at 0 50%);
+    transition: .7s ease-out;
+    transition-property: clip-path;
+}
+
+/*adição do filtro azul*/
+.box-slider:before {
+    z-index: 777;
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.459);
+}
+.box-slider .content {
+    z-index: 888;
+    display: none;
+}
+.box-slider .content.active {
+    display:block;
+}
+
+.box-slider .content h1 {
+  font-size: clamp(2rem, 10vw, 3.5rem);
+    font-weight: 900;
+    text-transform: uppercase;
+    letter-spacing: 3px;
+    line-height: 75px;
+    margin-bottom: .3em;
+    transition: .3s ease all;
+  
+}
+
+
+.box-slider .content span {
+    font-weight: 400;
+    font-size: clamp(2rem, 10vw, 3.5rem);
+}
+.box-slider .content p {
+    font-size: 1.1rem;
+    margin-bottom: 40px;
+    font-family: 'Nunito', sans-serif, serif;
+    max-width: 800px;
+    margin-top: 100px;
+
+
+}
+
+
+
+
+
+
+/************************************************************/
+
+
+
+.DivImgPerfil{
+ 
+
+}
+
+
+#FotoPerfil{
+
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/*************************FOOTER ***************************/
+
+
+.text-small {
+  font-size: 0.9rem;
+}
+
+
+a {
+  color: inherit;
+  text-decoration: none;
+  transition: all 0.4s;
+}
+
+a:hover,
+a:focus {
+  text-decoration: none;
+}
+
+.form-control {
+  background: #ffffff;
+  border-color: #545454;
+}
+
+.form-control:focus {
+  background: #ffffff;
+}
+
+footer {
+  background: var(--maincolor);
+  color: var(--text-color);
+}
+
+
+.socialMediaLinks{
+margin-top: 5px;
+margin-left: 30px;
+
+}
+
+
+
+.links{
+padding-right: 5px;
+
+}
+
+.links:hover{
+color: var(--hovertext-color);
+  
+  }
+
+  .sitelink{
+color: white;
+
+
+  }
+
+
+  .sitelink:hover{
+    color: var(--hovertext-color);
+    
+    
+      }
+
+.div1Footer{
+background-color: rgb(46, 129, 129);
+text-align: left;
+
+
+
+}
+
+.div2Footer{
+  background-color: rgb(63, 129, 46);
+  text-align: center;
+
+
+  
+  }
+
+  
+  .div3Footer{
+   background-color: rgb(153, 182, 22);
+   text-align: right;
+ 
+   }
+  
+.inputFooter{
+width: 300px;
+font-size: 15px;
+
+}
