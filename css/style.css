@@ -37,12 +37,47 @@ p{
 }
 p.intro{
 	font-size: 16px;
-	margin: 12px 0 0;
+	margin: 12px 5px 0;
 	line-height: 24px;
 	font-family: 'Open Sans', sans-serif;
+	text-align: justify;
 	color: rgb(231, 231, 231);
 	
 }
+
+.divPilotos{
+	display: flex;
+	justify-content: space-evenly;
+	align-items: center;
+	flex-wrap: wrap;
+}
+
+.fotoPiloto{
+width: 250px;
+border-radius: 15%;
+}	
+
+.fotoPiloto:hover{
+	filter: drop-shadow(0 0 5px white);
+	zoom: 110%;
+
+}
+
+
+
+
+
+p.servicesMX{
+	padding: 0 10vw;
+	font-size: 16px;
+	margin: 12px 5px 0;
+	line-height: 24px;
+	font-family: 'Open Sans', sans-serif;
+	text-align: justify;
+	color: rgb(0, 0, 0);
+	
+}
+
 a{ color: #00ca00;}
 a:hover,
 a:focus{
@@ -305,21 +340,28 @@ img.img-circle.team-img {
 	font-size: 50px;
 	padding: 20px 25px;
 }
+#tf-services .service p{
+	margin: 0 40px 10px;
+
+}
+
 
 #tf-services .service:hover>i.fa{
-	background: #FCAC45;
+	background: #ee8c0c;
 	color: #ffffff;
 }
 
 /* Clients Section */
 #tf-clients{
-	background: url(../img/04.jpg);
+	background: url(../img/251387_2022_high_point_mx_align_media_x_racer_x_041.jpg);
 	background-size: cover;
-	background-position: center;
+	background-position: top;
 	background-attachment: fixed;
 	background-repeat: no-repeat;
 	color: #ffffff;
-}
+	}
+
+
 
 #tf-clients .overlay{
 	background: -moz-linear-gradient(top,  rgba(0,0,0,0.8) 0%, rgba(0,0,0,0.73) 17%, rgba(0,0,0,0.66) 35%, rgba(0,0,0,0.55) 62%, rgba(0,0,0,0.4) 100%); /* FF3.6+ */
@@ -334,7 +376,7 @@ img.img-circle.team-img {
 }
 
 #clients .item{
-    padding: 0;
+    padding: 00;
     margin: 35px;
     color: #FFF;
     text-align: center;
