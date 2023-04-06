@@ -8,6 +8,20 @@ body, html{
 	color: #5a5a5a;
 }
 
+::-webkit-scrollbar{
+    width: 15px;
+}
+
+::-webkit-scrollbar-track{
+background-color: rgb(70, 70, 70);
+
+}
+::-webkit-scrollbar-thumb{
+border-radius: 35px;
+background-color: rgb(0, 130, 153);
+}
+
+
 h1{
 	text-transform: uppercase;
 }
@@ -59,7 +73,14 @@ border-radius: 15%;
 
 .fotoPiloto:hover{
 	filter: drop-shadow(0 0 5px white);
-	zoom: 110%;
+	transition: 1s;
+	scale: 1.1;
+
+}
+
+
+.divPilotos:hover :not(:hover){
+	opacity: 0.5;
 
 }
 
@@ -630,3 +651,4 @@ nav#footer p{
 	background: #FCAC45;
 	border-color: #FCAC45;
 	color: #ffffff;
+}
