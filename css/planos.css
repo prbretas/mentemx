@@ -1,0 +1,52 @@
+body{
+    background-color: black;
+}
+
+/*******************************/
+#player {
+	position: fixed;
+	min-width: 100vw;
+	min-height: 100vh;
+  }
+
+
+  
+.divPlanos{
+	display: flex;
+	justify-content: space-evenly;
+	align-items: center;
+	flex-wrap: wrap;
+}
+
+
+/*********************************************/
+
+.containerPlanos {
+	display: flex;
+	max-width: 90vw;
+    max-height:90vh ;
+    margin-top: 40px;
+  
+  }
+  .boxPlanos {
+	display: flex;
+	flex: 1;
+	transition: 0.5s;
+  }
+  .boxPlanos img {
+	transition: 0.5s;
+	width: 100%;
+	height: 70vh;
+	object-fit: cover;
+	object-position: top;
+	filter: grayscale(1);
+  	border: 1px solid rgb(255, 255, 255);
+	}
+
+  .boxPlanos:hover {
+	flex: 3;
+	/*scale: 1.1;*/
+  }
+  .boxPlanos:hover img {
+	filter: grayscale(0);
+  }

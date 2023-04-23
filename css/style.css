@@ -8,8 +8,10 @@ body, html{
 	color: #5a5a5a;
 }
 
+/*******************************/
+
 ::-webkit-scrollbar{
-    width: 15px;
+    width: 10px;
 }
 
 ::-webkit-scrollbar-track{
@@ -18,9 +20,23 @@ background-color: rgb(70, 70, 70);
 }
 ::-webkit-scrollbar-thumb{
 border-radius: 35px;
-background-color: rgb(0, 130, 153);
+background-color: rgb(255, 145, 0);
 }
 
+  
+/************************************/
+#logoMain{
+	padding:0;
+	margin: 0;
+transition: 0.3s ease;
+}
+
+#logoMain:hover{
+	scale: 1.2;
+	
+	filter: drop-shadow(0 0 2px greenyellow)
+
+}
 
 h1{
 	text-transform: uppercase;
@@ -96,7 +112,40 @@ p.intro{
 	filter: grayscale(0);
   }
 /*******************************************************/  
+.about-text{
+	display: flex;
+	flex-direction: column;
+}
 
+
+#btn-assine {
+	margin-top: 25px;
+	padding: 1.3em 3em;
+	font-size: 12px;
+	text-transform: uppercase;
+	letter-spacing: 2.5px;
+	font-weight: 500;
+	color: #ffffff;
+	font-weight: bold;
+	background: #ff8800;
+	border: none;
+	border-radius: 45px;
+	box-shadow: 0px 8px 15px rgba(0, 0, 0, 0.1);
+	transition: 0.3s ease;
+	cursor: pointer;
+	outline: none;
+	margin-left: 15vw;
+  }
+  #btn-assine:hover {
+	background-color: #7ad93b;
+	box-shadow: 0px 10px 20px rgba(208, 255, 0, 0.4);
+	color: #ffffff;
+	font-weight: bold;
+	transform: translateY(-7px);
+  }
+  #btn-assine:active {
+	transform: translateY(-1px);
+  }
 
 
 
