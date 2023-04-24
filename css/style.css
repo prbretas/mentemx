@@ -147,8 +147,6 @@ p.intro{
 	transform: translateY(-1px);
   }
 
-
-
 p.servicesMX{
 	padding: 0 10vw;
 	font-size: 16px;
@@ -279,10 +277,10 @@ a.fa.fa-angle-down { /*BOTAO DE SCROLL MAIN*/
 	transition: all 0.5s;
 }
 a.fa.fa-angle-down:hover{
-	background: #ff7637;
+	background: #ff8800;
 	color: #ffffff;
-	border: 2px solid #ff7637;
-	filter: drop-shadow(0 0 2px rgb(255, 255, 255));
+	border: 2px solid #ff8800;
+	filter: drop-shadow(0 0 5px rgb(0, 0, 0));
 }
 /* About Section */
 #tf-about{
