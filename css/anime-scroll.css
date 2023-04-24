@@ -1,0 +1,37 @@
+/******************ANIMAÇÕES********************/
+
+/*TRANSLATE 3D*/
+/*** Obs:
+- Eixo X (Horizontal)
+- Eixo Y (Vertical)
+- Eixo Z (3D) **/
+
+
+[data-anime] {
+    opacity: 0;
+    transition: 0.5s;
+  }
+  
+  [data-anime="left"] {
+    transform: translate3d(-30px, 0, 0);
+  }
+  
+  
+  [data-anime="right"] {
+    transform: translate3d(10px, 0, 0);
+  }
+  
+  [data-anime="top"] {
+    transform: translate3d(0, -30px, 0);
+  }
+  
+  [data-anime="bottom"] {
+    transform: translate3d(0, 30px, 0);
+  }
+  
+  
+  [data-anime].animate {
+    opacity: 1;
+    transform: translate3d(0px, 0px, 0px);
+  }
+  

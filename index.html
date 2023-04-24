@@ -32,6 +32,7 @@
         <!-- Stylesheet
     ================================================== -->
         <link rel="stylesheet" type="text/css" href="css/style.css">
+        <link rel="stylesheet" type="text/css" href="css/anime-scroll.css">
         <link rel="stylesheet" type="text/css" href="css/responsive.css">
 
         <link
@@ -41,7 +42,8 @@
             href='http://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,700,300,600,800,400'
             rel='stylesheet' type='text/css'>
 
-        <script type="text/javascript" src="js/modernizr.custom.js"></script>
+        <script defer type="text/javascript" src="js/modernizr.custom.js"></script>
+        <script defer type="text/javascript"src="./js/anime-scroll.js"></script>
         <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
         <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
         <!--[if lt IE 9]>
@@ -70,7 +72,7 @@
                     </button>
                     <!--<img src="./img/Logo Mente MX - Oficial.png" alt="" height="80px" style="padding:0;margin: 0;">-->
                     <a class="navbar-brand" href="index.html"><span
-                            style="color:rgb(255, 115, 0) ;">Mente</span><span
+                            style="color:#ff9100;">Mente</span><span
                             style="color: rgb(255, 217, 0);">MX</span></a>
                 </div>
 
@@ -82,7 +84,7 @@
                         <li><a href="#tf-about" class="page-scroll">Sobre</a></li>
                         <li><a href="#tf-team" class="page-scroll">Time</a></li>
                         <li><a href="#tf-services" class="page-scroll">Serviços</a></li>
-                        <li><a href="./pages/planos.html" class="page-scroll">Planos</a></li>
+                        <!--<li><a href="./pages/planos.html" class="page-scroll">Planos</a></li>-->
                         <li><a href="#tf-works" class="page-scroll">Portfolio</a></li>
                         <li><a href="#tf-testimonials" class="page-scroll">Depoimentos</a></li>
                         <li><a href="#tf-contact" class="page-scroll">Contato</a></li>
@@ -115,22 +117,25 @@
         <div id="tf-about">
             <div class="container">
                 <div class="row">
-                    <div class="col-md-6">
+                    <div class="col-md-6" data-anime="bottom">
                         <img src="img/PC MENTE MX.png" class="img-responsive"
                             style="filter:drop-shadow(0 0 3px rgb(58, 58, 58));">
                     </div>
-                    <div class="col-md-6">
-                        <div class="about-text">
+                    <div class="col-md-6"  data-anime="bottom">
+                        <div class="about-text" >
                             <div class="section-title">
-                                <h2 style="color: rgb(226, 226, 226);">Algumas
+                                <h2   data-anime="bottom" style="color: rgb(226, 226, 226);">Algumas
                                     palavras</h2>
-                                <h2 style="margin-top:10px;"><strong
+                                <h2   data-anime="bottom" style="margin-top:10px;"><strong
                                         style="color: rgb(226, 226, 226);">sobre
                                         nós</strong></h2>
-                                <hr>
+                                        <div class="line">
+                                            <hr>
+                                        </div>
+                                        <div class="clearfix"></div>
                                 <div class="clearfix"></div>
                             </div>
-                            <p class="intro">
+                            <p class="intro" >
                                 Bem-vindo ao Mente MX, o 1º treinamento para pilotos de motocross! Neste curso, você terá a oportunidade de desenvolver habilidades mentais essenciais para o motocross, como foco, concentração, confiança e resiliência.
                                 <br><br>
                                 Nosso programa é projetado para ajudá-lo a melhorar sua performance em corridas de motocross, fornecendo técnicas e exercícios de treinamento mental comprovados. Com a orientação de João Carlos Emery, você aprenderá a controlar suas emoções, aprimorar sua visualização e manter o foco durante as corridas.
@@ -160,8 +165,6 @@
                             </ul>
                              <a href="./pages/planos.html"><button id="btn-assine">ASSINE AGORA</button></a>
                         </div>
-                        
-                       
                     </div>
                 </div>
             </div>
@@ -175,7 +178,7 @@
     ==========================================-->
         <div id="tf-team" class="text-center">
             <div class="overlay">
-                <div class="container">
+                <div class="container" data-anime="left">
                     <div class="section-title center">
                         <h2>Conheça <strong>nosso time</strong></h2>
                         <div class="line">
@@ -256,7 +259,7 @@
     ==========================================-->
         <div id="tf-services" class="text-center">
             <div class="container">
-                <div class="section-title center">
+                <div class="section-title center"  data-anime="bottom">
                     <h2 style="color: rgb(90, 90, 90);"><strong>Mente MX</strong></h2>
                     <h2 style="margin-top: 10px; color: rgb(90, 90, 90);"> na prática</h2>
                     <div class="line">
@@ -276,7 +279,7 @@
                 </div>
 
                 <div class="space"></div>
-                <div class="row">
+                <div class="row" data-anime="left" >
                     <div class="col-md-3 col-sm-6 service">
                         <i class="fa fa-bullseye"></i>
                         <h4><strong>Foco:</strong></h4>
@@ -296,7 +299,7 @@
                     </div>
                </div>
 
-               <div class="row">
+               <div class="row" data-anime="right">
                    <div class="col-md-3 col-sm-6 service">
                        <i class="fa fa-shield"></i>
                        <h4><strong>Confiança:</strong></h4>
@@ -314,7 +317,7 @@
                    </div>                 
                </div>
 
-               <div class="row">
+               <div class="row" data-anime="left">
                     <div class="col-md-3 col-sm-6 service">
                         <i class="fa fa-comment-o"></i>
                         <h4><strong>Comunicação:</strong></h4>
@@ -341,23 +344,23 @@
                 <div class="container">
 
                     <div class="section-title center">
-                        <h2>Alguns dos </h2>
-                        <h2 style="margin-top: 10px;"><strong>nossos Pilotos</strong></h2>
-                        <div class="line">
+                        <h2 data-anime="bottom">Alguns dos </h2>
+                        <h2  data-anime="bottom" style="margin-top: 10px;"><strong>nossos Pilotos</strong></h2>
+                        <div  data-anime="bottom" class="line">
                             <hr>
                         </div>
                     </div>
                     <div class="divPilotos">
                         <div class="containerPilotos">
-                            <div class="box">
+                            <div class="box"  data-anime="left">
                                 <!--<h3>Lucas Dunka</h3>-->
                               <img src="img/01 - DUNKA.png" title="#34 Lucas Dunka" />
                             </div>
-                            <div class="box">
+                            <div class="box"   data-anime="bottom">
                                 <!--<h3>Fred Spagnol</h3>-->
                               <img src="img/02 - SPÀGNOL.png" title="#61 Fred Spagnol"  />
                             </div>
-                            <div class="box">
+                            <div class="box"  data-anime="right">
                                 <!--<h3>Garmichel Rodrigues Giehl </h3>-->
                               <img src="img/03 - GARMICHEL.png" title="#4 Garmichel Giehl"  />
                             </div>
@@ -387,7 +390,7 @@
                         </div>
                        <div data-mc-src="ddb16439-68ac-40ed-9068-a22fec28f1f3#instagram"></div>
         
-                <script 
+                <script defer
                 src="https://cdn2.woxo.tech/a.js#6261ccc24ce29e002fb4d8cb" 
                 async data-usrc>
                 </script>
@@ -558,7 +561,7 @@
 -->
                 </div>
             </div>
-        </div>
+    
 
         <!-- Testimonials Section
     ==========================================-->
@@ -566,13 +569,13 @@
             <div class="overlay">
                 <div class="container">
                     <div class="section-title center">
-                        <h2><strong>Depoimentos</strong></h2>
-                        <h2 style="margin-top: 10px;">dos nossos mentorados</h2>
-                        <div class="line">
+                        <h2  data-anime="bottom"><strong>Depoimentos</strong></h2>
+                        <h2  data-anime="bottom" style="margin-top: 10px;">dos nossos mentorados</h2>
+                        <div  data-anime="bottom" class="line">
                             <hr>
                         </div>
                     </div>
-                    <div class="row2">
+                    <div class="row2"    data-anime="bottom" >
                         <div class="col-md-8 col-md-offset-2">
                             <div id="testimonial" class="owl-carousel
                                 owl-theme">
@@ -620,7 +623,7 @@
         <div id="tf-contact" class="text-center">
             <div class="container">
 
-                <div class="row2">
+                <div class="row2"    data-anime="bottom" >
                     <div class="col-md-8 col-md-offset-2">
 
                         <div class="section-title center">
@@ -692,7 +695,7 @@
         <nav id="footer">
             <div class="container">
                 <div class="pull-left fnav">
-                    <a href="index.html">mentemx.com.br</a>
+                    <a href="index.html" id="url-footer">mentemx.com.br</a>
                     <p>Mente MX © 2023.</p>
                     <p>TODOS OS DIREITOS RESERVADOS. </p>
                     <ul class="footer-social">
@@ -717,20 +720,20 @@
 
 
         <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
-        <script
+        <script defer
             src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
-        <script type="text/javascript" src="js/jquery.1.11.1.js"></script>
+        <script defer type="text/javascript" src="js/jquery.1.11.1.js"></script>
         <!-- Include all compiled plugins (below), or include individual files as needed -->
-        <script type="text/javascript" src="js/bootstrap.js"></script>
-        <script type="text/javascript" src="js/SmoothScroll.js"></script>
-        <script type="text/javascript" src="js/jquery.isotope.js"></script>
-        <script src="js/owl.carousel.js"></script>
+        <script defer type="text/javascript" src="js/bootstrap.js"></script>
+        <script defer type="text/javascript" src="js/SmoothScroll.js"></script>
+        <script defer type="text/javascript" src="js/jquery.isotope.js"></script>
+        <script defer src="js/owl.carousel.js"></script>
 
         <!-- Javascripts
     ================================================== -->
-        <script type="text/javascript" src="js/main.js"></script>
+        <script defer type="text/javascript" src="js/main.js"></script>
         <!---------------------------BOTAO WHATSAPP------------------------------>
-        <script>window.rwbp = { email: 'mentemxnapratica@gmail.com', phone: '+55 (47) 99172-6582', message: 'Olá, você será redirecionado ao nosso canal do WhatsApp.', lang: 'pt-BR' }</script>
+        <script defer>window.rwbp = { email: 'mentemxnapratica@gmail.com', phone: '+55 (47) 99172-6582', message: 'Olá, você será redirecionado ao nosso canal do WhatsApp.', lang: 'pt-BR' }</script>
         <script defer async
             src='https://duz4dqsaqembt.cloudfront.net/client/whats.js'></script>
     </body>
