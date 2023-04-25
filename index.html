@@ -661,36 +661,38 @@
                         </div>
 
                         <form action="mailto:mentemxnapratica@gmail.com" method="GET">
-                            <div class="row">
-                                <div class="col-md-6">
+                            <div class="row" id="form-group">
+                                <div>
                                     <div class="form-group">
                                         <label for="exampleInputEmail1">Email</label>
+                                        <br>
                                         <input type="email" class="form-control"
                                             id="exampleInputEmail1"
                                             placeholder="Insira seu email"
                                             required>
                                     </div>
                                 </div>
-                                <div class="col-md-6">
+                                <div>
                                     <div class="form-group">
                                         <label for="exampleInputTelefone1">Telefone</label>
+                                        <br>
                                         <input type="text" class="form-control"
                                             id="exampleInputTelefone1"
                                             placeholder="Insira seu Telefone"
                                             required>
                                     </div>
                                 </div>
+                                <div class="form-group">
+                                    <label for="exampleInputMensagem1">Mensagem</label>
+                                    <br>
+                                    <textarea rows="3"
+                                        style="resize: none;"
+                                        id="exampleInputMensagem1"
+                                        placeholder="Deixe a sua mensagem"
+                                        required
+                                        minlength="10"></textarea>
+                                </div>
                             </div>
-                            <div class="form-group">
-                                <label for="exampleInputMensagem1">Mensagem</label>
-                                <textarea class="form-control" rows="3"
-                                    style="resize: none;"
-                                    id="exampleInputMensagem1"
-                                    placeholder="Deixe a sua mensagem"
-                                    required
-                                    minlength="10"></textarea>
-                            </div>
-
                             <button type="submit" class="btn tf-btn
                                 btn-default">Enviar</button>
                         </form>

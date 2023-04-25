@@ -35,13 +35,14 @@ background-color: #ff9100;
 
 #logoCapa{ /*LOGO MAIOR FUNDO DA SECTION INSTAGRAM*/
 	background-color: #00000000;
-	opacity: 0.2;
+	opacity: 0.3;
 	position: absolute;
 	width: 80vw;
 	transition: 0.6s;
 	margin-top: 130px;
 	margin-left: -390px;
 	transform: rotateZ(-5deg);
+	filter: drop-shadow(0 0 15px black);
 }
   
 /************************************/
@@ -505,7 +506,7 @@ img.img-circle.team-img {
 	background-color: #ffffff;
 	box-shadow: 0 0 15px rgb(0, 0, 0);
 	filter: drop-shadow(0 0 15px black);
-	min-height: 110vh;
+	min-height: 120vh;
 }
 .categories{ 
 	padding: 10px 0;
@@ -650,10 +651,17 @@ ol.type li a.active { font-weight: 700; }
 }
 /* Contact Section */
 #tf-contact{
-	padding: 80px 0;
+	padding: 70px 0;
 	background-color: rgb(12, 12, 12);
 	box-shadow: 0 0 15px rgb(0, 0, 0);
 }
+
+#form-group{
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	
+	}
 
 label {
 	float: left;
@@ -662,10 +670,8 @@ label {
 	font-family: 'Open Sans', sans-serif;
 	color: #FFF;
 }
-#tf-contact .form-control {
-	display: block;
-	width: 100%;
-	padding: 6px 12px;
+#exampleInputEmail1, #exampleInputTelefone1, #exampleInputMensagem1 {
+	width: 50vw;
 	font-size: 14px;
 	line-height: 1.42857143;
 	color: rgb(255, 255, 255);
@@ -681,7 +687,6 @@ label {
 }
 
 
-
 #tf-contact .form-control:focus {
 	border-color: inherit;
 	outline: 0;
@@ -690,7 +695,7 @@ label {
 }
 
 button.btn.tf-btn.btn-default {
-	float: right;
+	float: center;
 	background: #ff9100;
 	border: 0;
 	border-radius: 5px;
@@ -754,7 +759,7 @@ color:#ff9100; ;
 	}
 
 #url-footer:active{
-	color:#d6ffbb;
+	color:#abff73;
 	
 	}
 
