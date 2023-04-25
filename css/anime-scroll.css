@@ -29,7 +29,24 @@
     transform: translate3d(0, 30px, 0);
   }
   
-  
+  [data-anime="rotate-horario"] {
+    transform: rotateZ(180deg);
+ }
+  [data-anime="rotate-ante-horario"] {
+     transform: rotateZ(181deg);
+  }
+
+  [data-anime="flip-horizontal"] {
+        transform: rotateY(180deg);
+ }
+  [data-anime="flip-vertical-up"] {
+     transform: rotateX(180deg);
+  }
+
+  [data-anime="flip-vertical-down"] {
+    transform: rotateX(181deg);
+ }
+
   [data-anime].animate {
     opacity: 1;
     transform: translate3d(0px, 0px, 0px);
