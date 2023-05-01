@@ -1,3 +1,6 @@
-# mentemx3
-Teste 3 MenteMX
-https://prbretas.github.io/mentemx3/
+# MenteMX
+Preparação Mental para Pilotos OFF-Road
+<br>
+https://prbretas.github.io/mentemx/
+
+<img src="./img/Logo Mente MX - Oficial.png">
