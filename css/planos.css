@@ -7,8 +7,8 @@ body{
 	position: fixed;
 	min-width: 100vw;
 	min-height: 100vh;
-  }
 
+  }
 
   
 .divPlanos{
@@ -32,8 +32,8 @@ body{
 	display: flex;
 	flex: 1;
 	transition: 0.5s;
-	width: 60vw;
-	height: 70vh;
+	width: 40vw;
+	height: 60vh;
   }
  
   .boxPlano1{

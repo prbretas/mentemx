@@ -263,7 +263,8 @@ font-weight: 900;
 .navbar-default .navbar-toggle:hover>.icon-bar {
 	background-color: #FFF;
 	}
-/* Home Style */
+
+	/******************************** Home Style ***************/
 #tf-home{ /*BACKGROUND*/
 	background: url(https://images.pexels.com/photos/1448385/pexels-photo-1448385.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1);
 	background-size: cover;
@@ -272,6 +273,7 @@ font-weight: 900;
 	background-repeat: no-repeat;
 	color: #cfcfcf;
 }
+
 
 #tf-home .overlay{
 	background: -moz-linear-gradient(top,  rgba(0,0,0,0.8) 0%, rgba(0,0,0,0.73) 17%, rgba(0,0,0,0.66) 35%, rgba(0,0,0,0.55) 62%, rgba(0,0,0,0.4) 100%); /* FF3.6+ */
@@ -506,7 +508,7 @@ img.img-circle.team-img {
 	background-color: #ffffff;
 	box-shadow: 0 0 15px rgb(0, 0, 0);
 	filter: drop-shadow(0 0 15px black);
-	min-height: 120vh;
+	min-height: 110vh;
 }
 .categories{ 
 	padding: 10px 0;
