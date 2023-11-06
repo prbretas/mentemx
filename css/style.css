@@ -8,6 +8,7 @@ body, html{
 	color: #5a5a5a;
 }
 
+
 /*******************************/
 
 ::-webkit-scrollbar{
@@ -438,6 +439,7 @@ img.img-circle.team-img {
 
 .space{
 	margin-top: 40px;
+	background-color: black;
 }
 
 #tf-services i.fa {
@@ -783,4 +785,29 @@ nav#footer p{
 	background: #ff9100;
 	border-color: #ff9100;
 	color: #ffffff;
+}
+
+#containerPlano{
+
+	min-height: 100vh;
+	background-image: url('../img/grid\ background\ verde.jpg');
+	display: flex;
+	justify-content: space-evenly;
+	align-items: center;
+}
+#divPlano{
+
+
+}
+
+.imgPlano{
+	height:400px;
+	transition:0.7s;
+	
+}
+
+.imgPlano:hover{
+filter: drop-shadow(0 0 5px yellowgreen);
+scale: 1.1;
+
 }
