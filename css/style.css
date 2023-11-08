@@ -806,7 +806,7 @@ nav#footer p{
 
 #containerPlano{
 
-	min-height: 100vh;
+	min-height: 70vh;
 	background-image: url('../img/grid\ background\ verde.jpg');
 	display: flex;
 	justify-content: space-evenly;
@@ -824,13 +824,15 @@ nav#footer p{
 	border-color: #000000;
 }
 
-
-
-
 	.imgPlano{
-		height:500px;
+		max-height:500px;
 		transition:0.7s;
 		margin: 50px 0;
+		
+	}
+
+	.imgPlano:hover{
+		filter: drop-shadow(0 0 5px yellowgreen);
 		
 	}
 
