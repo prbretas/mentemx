@@ -8,7 +8,6 @@ body, html{
 	color: #5a5a5a;
 }
 
-
 /*******************************/
 
 ::-webkit-scrollbar{
@@ -24,8 +23,6 @@ border-radius: 35px;
 background-color: #ff9100;
 }
 
-
-
 #logoCapaPilotos{ /*LOGO MENOR EM CIMA DO TITULO DA SECTION*/
 	background-color: #00000000;
 	width: 15vw;
@@ -34,17 +31,6 @@ background-color: #ff9100;
 	filter: drop-shadow(0 0 2px greenyellow)
 }
 
-#logoCapa{ /*LOGO MAIOR FUNDO DA SECTION INSTAGRAM*/
-	background-color: #00000000;
-	opacity: 0.3;
-	position: absolute;
-	width: 80vw;
-	transition: 0.6s;
-	margin-top: 130px;
-	margin-left: -390px;
-	transform: rotateZ(-5deg);
-	filter: drop-shadow(0 0 15px black);
-}
   
 /************************************/
 #logoMain{
@@ -165,6 +151,37 @@ p.intro{
 	transform: translateY(-7px);
   }
   #btn-assine:active {
+	transform: translateY(-1px);
+	box-shadow: 0px 4px 16px rgba(208, 255, 0, 0.4);
+  }
+
+
+
+  #btn-assine2 {
+	position: left;
+	padding: 1.3em 3em;
+	font-size: 1.4rem;
+	text-transform: uppercase;
+	letter-spacing: 2.5px;
+	font-weight: 500;
+	color: #ffffff;
+	font-weight: bold;
+	background: #ff9100;
+	border: none;
+	border-radius: 5px;
+	box-shadow: 0px 8px 15px rgba(0, 0, 0, 0.1);
+	transition: 0.3s ease;
+	cursor: pointer;
+	outline: none;
+  }
+  #btn-assine2:hover {
+	background-color: #7ad93b;
+	box-shadow: 0px 10px 20px rgba(208, 255, 0, 0.4);
+	color: #ffffff;
+	font-weight: bold;
+	transform: translateY(-7px);
+  }
+  #btn-assine2:active {
 	transform: translateY(-1px);
 	box-shadow: 0px 4px 16px rgba(208, 255, 0, 0.4);
   }
@@ -795,19 +812,28 @@ nav#footer p{
 	justify-content: space-evenly;
 	align-items: center;
 }
-#divPlano{
 
+.containerPlano2{
 
+	min-height: 10vh;
+	background-image: url('../img/grid\ background\ verde.jpg');
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	padding: 30px 0;
+	border-color: #000000;
 }
 
-.imgPlano{
-	height:400px;
-	transition:0.7s;
-	
-}
 
-.imgPlano:hover{
-filter: drop-shadow(0 0 5px yellowgreen);
-scale: 1.1;
 
-}
+
+	.imgPlano{
+		height:500px;
+		transition:0.7s;
+		margin: 50px 0;
+		
+	}
+
+
+
+
