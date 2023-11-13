@@ -837,5 +837,26 @@ nav#footer p{
 	}
 
 
+	.containerFAQ{
+		padding: 20px 0 ;
+		background-color: #222222;
+		display: flex;
+		flex-direction: column;
+		align-items: center;
+	}
+
+	.btn-warning{
+		font-size: 1.6rem;
+	}
+
+	.card-body{
+		border: 1px solid rgb(68, 68, 68);
+		max-width: 400px;
+		padding: 10px;
+		border-radius: 5px;
+		background-color: white;
+		margin: 10px 0 ;
+		font-size: 1.6rem;
+	}
 
 
