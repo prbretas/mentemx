@@ -284,8 +284,7 @@ font-weight: 900;
 
 	/******************************** Home Style ***************/
 #tf-home{ /*BACKGROUND*/
-	background: url(https://images.pexels.com/photos/1448385/pexels-photo-1448385.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1);
-	background-size: cover;
+background-image: url();
 	background-position: top left;
 	background-attachment: fixed;
 	background-repeat: no-repeat;
