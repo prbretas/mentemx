@@ -575,20 +575,23 @@ function _renderRelated(currentId) {
   var relatedSection = document.getElementById('modalRelated');
   if (!track) return;
 
-  // Pega até 6 produtos diferentes do atual
+  // Todos os produtos exceto o atual
   var others = PRODUCTS.filter(function(p) { return p.id !== currentId; });
 
-  // Prioriza mesma categoria, depois os demais
+  // Ordena: primeiro os mais clicados recentemente, depois mesma categoria, depois o resto
   var current = PRODUCTS.find(function(p) { return p.id === currentId; });
-  if (current) {
-    others.sort(function(a, b) {
-      var aMatch = a.category === current.category ? 0 : 1;
-      var bMatch = b.category === current.category ? 0 : 1;
-      return aMatch - bMatch;
-    });
-  }
+  others.sort(function(a, b) {
+    var clicksA = _clickCounts[a.id] || 0;
+    var clicksB = _clickCounts[b.id] || 0;
+    // Prioridade 1: mais clicados
+    if (clicksB !== clicksA) return clicksB - clicksA;
+    // Prioridade 2: mesma categoria
+    var catA = current && a.category === current.category ? 0 : 1;
+    var catB = current && b.category === current.category ? 0 : 1;
+    return catA - catB;
+  });
 
-  var shown = others.slice(0, 8);
+  var shown = others.slice(0, 10);
 
   track.innerHTML = shown.map(function(p) {
     var imgSrc = p.images && p.images[0] ? p.images[0] : '';
@@ -605,6 +608,33 @@ function _renderRelated(currentId) {
 
   // Mostra/oculta a seção
   relatedSection.style.display = shown.length > 0 ? 'block' : 'none';
+
+  // Inicializa setas do carrossel de relacionados
+  _initRelatedArrows();
+}
+
+function _initRelatedArrows() {
+  var track = document.getElementById('modalRelatedTrack');
+  var prevBtn = document.getElementById('relatedPrev');
+  var nextBtn = document.getElementById('relatedNext');
+  if (!track || !prevBtn || !nextBtn) return;
+
+  function updateArrows() {
+    var maxScroll = track.scrollWidth - track.clientWidth;
+    prevBtn.classList.toggle('hidden', track.scrollLeft <= 4);
+    nextBtn.classList.toggle('hidden', track.scrollLeft >= maxScroll - 4);
+  }
+
+  prevBtn.onclick = function() {
+    track.scrollBy({ left: -200, behavior: 'smooth' });
+  };
+  nextBtn.onclick = function() {
+    track.scrollBy({ left: 200, behavior: 'smooth' });
+  };
+
+  track.addEventListener('scroll', updateArrows);
+  // Aguarda render para calcular scroll corretamente
+  setTimeout(updateArrows, 50);
 }
 
 function renderModalGallery(modal) {

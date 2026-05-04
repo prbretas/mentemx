@@ -1050,8 +1050,12 @@ https://prbretas.github.io/mentemx/
       <!-- Rodapé: produtos relacionados -->
       <div class="modal-related" id="modalRelated">
         <p class="modal-related-label">Outros produtos</p>
-        <div class="modal-related-track" id="modalRelatedTrack">
-          <!-- Preenchido dinamicamente por openModal() -->
+        <div class="modal-related-wrap">
+          <button class="related-arrow hidden" id="relatedPrev" aria-label="Anterior">&#8592;</button>
+          <div class="modal-related-track" id="modalRelatedTrack">
+            <!-- Preenchido dinamicamente por openModal() -->
+          </div>
+          <button class="related-arrow" id="relatedNext" aria-label="Próximo">&#8594;</button>
         </div>
       </div>
     </div>
