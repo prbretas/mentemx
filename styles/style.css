@@ -216,12 +216,12 @@ nav {
     position: relative;
     z-index: 2;
     text-align: center;
-    padding: 0 20px;
+    padding: 80px 20px 20px;
     max-width: 950px
 }
 
 .hero-logo {
-    margin-bottom: 28px;
+    margin-bottom: 16px;
     display: flex;
     justify-content: center
 }
@@ -233,9 +233,8 @@ nav {
 
 /* SVG logo placeholder — replaced by inline SVG approximation */
 #logo-hero {
-    width:  350px;    
-    /*width: min(520px, 88vw);*/    
-    transition: 1.0s;    
+    width: clamp(180px, 28vw, 300px);
+    transition: 1.0s;
 }
 
 #logo-hero:hover {
@@ -245,19 +244,19 @@ nav {
 }
 
 .hero-tagline {
-    font-size: .78rem;
+    font-size: .72rem;
     letter-spacing: 4px;
     text-transform: uppercase;
     color: var(--orange);
-    margin-bottom: 14px;
+    margin-bottom: 10px;
     font-weight: 700
 }
 
 .hero-title {
     font-family: 'Bebas Neue', sans-serif;
-    font-size: clamp(3rem, 9vw, 6.5rem);
+    font-size: clamp(2.4rem, 7vw, 5.5rem);
     line-height: .95;
-    margin-bottom: 18px;
+    margin-bottom: 14px;
     letter-spacing: 2px
 }
 
@@ -270,17 +269,17 @@ nav {
 }
 
 .hero-sub {
-    font-size: clamp(.95rem, 2.2vw, 1.2rem);
+    font-size: clamp(.88rem, 1.8vw, 1.05rem);
     color: #ccc;
-    max-width: 580px;
-    margin: 0 auto 36px;
-    line-height: 1.7;
+    max-width: 540px;
+    margin: 0 auto 26px;
+    line-height: 1.65;
     font-weight: 300
 }
 
 .hero-btns {
     display: flex;
-    gap: 16px;
+    gap: 14px;
     justify-content: center;
     flex-wrap: wrap
 }
@@ -288,10 +287,10 @@ nav {
 .btn-primary {
     background: var(--orange);
     color: #fff;
-    padding: 16px 36px;
+    padding: 13px 30px;
     border-radius: 4px;
     font-weight: 800;
-    font-size: .95rem;
+    font-size: .88rem;
     text-decoration: none;
     text-transform: uppercase;
     letter-spacing: 2px;
@@ -307,10 +306,10 @@ nav {
 .btn-secondary {
     background: transparent;
     color: #fff;
-    padding: 16px 36px;
+    padding: 13px 30px;
     border-radius: 4px;
     font-weight: 700;
-    font-size: .95rem;
+    font-size: .88rem;
     text-decoration: none;
     text-transform: uppercase;
     letter-spacing: 2px;
