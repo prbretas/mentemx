@@ -1,531 +1,707 @@
 <!----------------------------------------------------------------------
 MENTE MX - Treinamento para Pilotos Off-Road
-HTML5, CSS3, JavaScript, Bootstrap e outros frameworks.
 @author  Philippe Rocca Bretas
-@since   07/06/2022
+@since   21/04/2026
 @version 1.0
 Todos os direitos reservados.
 https://prbretas.github.io/mentemx/
 ------------------------------------------------------------------->
-<!DOCTYPE html>
-<html lang="pt-br">
+<!doctype html>
+<html lang="pt-BR">
 
 <head>
-  <!-- Basic Page Needs
-    ================================================== -->
-  <meta charset="utf-8" />
-  <!--[if IE]><meta http-equiv="x-ua-compatible" content="IE=9" /><![endif]-->
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Mente MX - Programação mental para Pilotos</title>
-  <meta name="author" content="ThemeForces.com" />
-
-  <!-- Favicons
-    ================================================== -->
-  <link rel="shortcut icon" href="./img/Logo Capacete.png" type="icon" />
-  <link rel="apple-touch-icon" href="./img/Logo Capacete.png" />
-  <link rel="apple-touch-icon" sizes="72x72" href="./img/Logo Capacete.png" />
-  <link rel="apple-touch-icon" sizes="114x114" href="./img/Logo Capacete.png" />
-
-  <!-- Bootstrap -->
-  <link rel="stylesheet" type="text/css" href="css/bootstrap.css" />
-  <link rel="stylesheet" type="text/css" href="fonts/font-awesome/css/font-awesome.css" />
-
-  <!-- Slider
-    ================================================== -->
-  <link href="css/owl.carousel.css" rel="stylesheet" media="screen" />
-  <link href="css/owl.theme.css" rel="stylesheet" media="screen" />
-
-  <!-- Stylesheet
-    ================================================== -->
-  <link rel="stylesheet" type="text/css" href="css/style.css" />
-  <link rel="stylesheet" type="text/css" href="css/anime-scroll.css" />
-  <link rel="stylesheet" type="text/css" href="css/responsive.css" />
-  <!-- <link rel="stylesheet" href="./css/video.css">-->
-
-  <link
-    href="http://fonts.googleapis.com/css?family=Lato:100,300,400,700,900,100italic,300italic,400italic,700italic,900italic"
-    rel="stylesheet" type="text/css" />
-  <link
-    href="http://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,700,300,600,800,400"
-    rel="stylesheet" type="text/css" />
-
-  <script defer type="text/javascript" src="js/modernizr.custom.js"></script>
-  <script defer type="text/javascript" src="./js/anime-scroll.js"></script>
-
-  <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
-  <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
-  <!--[if lt IE 9]>
-      <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
-      <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
-    <![endif]-->
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Mente MX — Técnicas e Estratégias Mentais</title>
+  <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Inter:wght@300;400;600;700;900&display=swap"
+    rel="stylesheet" />
+  <script defer src="./scripts/script.js"></script>
+  <link rel="stylesheet" href="./styles/style.css" />
 </head>
 
 <body>
-  <!-- Navigation
-    ==========================================-->
-  <nav id="tf-menu" class="navbar navbar-default navbar-fixed-top">
-    <div class="container">
-      <!-- Brand and toggle get grouped for better mobile display -->
-      <div class="navbar-header">
-        <button type="button" class="navbar-toggle collapsed" data-toggle="collapse"
-          data-target="#bs-example-navbar-collapse-1">
-          <span class="sr-only">Toggle navigation</span>
-          <span class="icon-bar"></span>
-          <span class="icon-bar"></span>
-          <span class="icon-bar"></span>
-        </button>
-        <!--<img src="./img/Logo Mente MX - Oficial.png" alt="" height="80px" style="padding:0;margin: 0;">-->
-        <a class="navbar-brand" href="index.html">
-          <!--<span style="color: #ff9100">Mente</span>
-            <span style="color: rgb(255, 217, 0)">MX</span>-->
-          <img id="logoMenu1" src="./img/Logo Mente MX - Oficial filtro.png" alt="Logo Capacete MenteMX"
+  <!-- NAVBAR -->
+  <nav>
+    <div class="nav-inner">
+      <a href="#hero" class="logo-nav">
+        <!-- Logo SVG inline representando a marca Mente MX -->
+        <img src="./img/Logo Mente MX - Oficial.png" id="logo-nav" alt="Logo do Mente MX" />
+      </a>
+      <ul class="nav-links">
+        <li><a href="#sobre">Sobre</a></li>
+        <li><a href="#campeoes">Campeões</a></li>
+        <li><a href="#servicos">Serviços</a></li>
+        <li><a href="#app">Mente Mx Pro</a></li>
+        <!--  <li><a href="#loja">Loja</a></li>-->
+        <li><a href="#faq">FAQ</a></li>
+        <li><a href="#contato">Contato</a></li>
+      </ul>
+      <a href="#servicos" class="nav-cta">Quero Mentoria</a>
+      <div class="hamburger" onclick="toggleMenu()">
+        <span></span><span></span><span></span>
+      </div>
+    </div>
+    <div class="mobile-menu" id="mobileMenu">
+      <a href="#sobre" onclick="toggleMenu()">Sobre</a>
+      <a href="#campeoes" onclick="toggleMenu()">Campeões</a>
+      <a href="#servicos" onclick="toggleMenu()">Serviços</a>
+      <a href="#app" onclick="toggleMenu()">Mente MX Pro</a>
+      <a href="#loja" onclick="toggleMenu()">Loja</a>
+      <a href="#faq" onclick="toggleMenu()">FAQ</a>
+      <a href="#contato" onclick="toggleMenu()">Contato</a>
+      <a href="https://wa.me/5547992108650" target="_blank" style="color: var(--orange)">💬 WhatsApp</a>
+    </div>
+  </nav>
+
+  <!-- HERO -->
+  <section id="hero">
+    <div class="video-bg" id="videoBg">
+      <video id="heroVideo" autoplay muted playsinline></video>
+    </div>
+    <div class="video-overlay"></div>
+    <div class="hero-content">
+      <!-- Logo grande no hero -->
+      <!-- <div class="hero-logo">
+          <img
+            src="./img/Logo Mente MX - Oficial.png"
+            id="logo-hero"
+            alt="Logo do Mente MX"
           />
-        </a>
+        </div>-->
+      <p class="hero-tagline">Técnicas e Estratégias Mentais para Pilotos e Equipes</p>
+      <h1 class="hero-title">
+        PREPARANDO SUA <span class="hl-o">CABEÇA</span><br />PARA DAR
+        <span class="hl-g">SHOW</span>
+      </h1>
+      <p class="hero-sub">
+        O maior programa de mentorias para pilotos do MX da América Latina. Agora disponível para você!
+      </p>
+      <div class="hero-btns">
+        <a href="#servicos" class="btn-primary">Saiba Mais </a>
+        <a href="#campeoes" class="btn-secondary">Ver Campeões</a>
       </div>
-
-      <!-- Collect the nav links, forms, and other content for toggling -->
-      <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
-        <ul class="nav navbar-nav navbar-right">
-          <li><a href="#tf-home" class="page-scroll">Home</a></li>
-          <li><a href="#tf-about" class="page-scroll">Sobre</a></li>
-          <li><a href="#tf-team" class="page-scroll">Time</a></li>
-          <li><a href="#containerPlano" class="page-scroll">Planos</a></li>
-          <li><a href="#logoCapaPilotos" class="page-scroll">Campeões</a></li>
-          <li><a href="#faq-text" class="page-scroll">Dúvidas</a></li>
-          <!--<li><a href="#tf-contact" class="page-scroll">Contato</a></li>-->
-        </ul>
-      </div>
-      <!-- /.navbar-collapse -->
     </div>
-    <!-- /.container-fluid -->
-  </nav>
-  <!-- Home Page
-    ==========================================-->
-  <div id="tf-home" class="text-center">
-    <div class="overlay">
-      <div class="content">
-        <img id="logoMain" src="./img/Logo Capacete filtro.png" alt="" />
-        <h1>
-          Seja Bem Vindo ao <br />
-          <strong><span class="color">MENTE MX</span></strong>
-        </h1>
-        <p class="lead">
-          O 1º Programa de <strong>Preparação Mental</strong>
-          <br />
-          para <strong>Pilotos do Motociclismo Off-Road.</strong>
+    <div class="video-dots" id="videoDots"></div>
+    <!--<div class="hero-scroll">
+    <span>Scroll</span>
+    <div class="scroll-arr"></div>
+  </div>-->
+  </section>
+
+  <!-- STATS -->
+  <section id="stats">
+    <div class="stats-grid">
+      <div class="stat-item">
+        <h3>+1K</h3>
+        <p>Pilotos Mentorados</p>
+      </div>
+      <div class="stat-item">
+        <h3>+114</h3>
+        <p>Campeões Mentorados</p>
+      </div>
+      <div class="stat-item">
+        <h3>+9</h3>
+        <p>Anos de Experiência</p>
+      </div>
+      <div class="stat-item">
+        <h3>8</h3>
+        <p>Países Atendidos</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- SOBRE -->
+  <section id="sobre">
+    <div class="about-grid">
+      <div class="about-img-box">
+        <div class="about-placeholder" style="height: 420px">
+          <img src="./img/Perfil-IMG_5228.JPG" alt="" />
+        </div>
+      </div>
+      <div class="about-content">
+        <span class="section-label">Quem é o Mentor</span>
+        <h2 class="section-title">
+          A MENTE É O <span>MOTOR</span> DO CAMPEÃO
+        </h2>
+        <div class="divider"></div>
+        <span class="about-tag">Head do Mente MX</span>
+        <h1 style="margin-bottom:10px;">João Carlos Emery</h1>
+        <p>
+          Idealizador do Mente MX, programa voltado ao desenvolvimento mental e comportamental de pilotos
+          do motociclismo de competição.
         </p>
-        <a href="#tf-about" class="fa fa-angle-down page-scroll"></a>
+        <p>
+          Sua missão é preparar a cabeça dos pilotos para dar show dentro e fora das pistas.
+        </p>
+        <!--
+          <div class="about-features">
+            <div class="feat"><span>🧠 Psicologia Esportiva</span></div>
+            <div class="feat"><span>🏆 Metodologia Comprovada</span></div>
+            <div class="feat"><span>🎯 Foco em Resultados</span></div>
+            <div class="feat"><span>🍀 Mentalidade Campeã</span></div>
+          </div>-->
       </div>
     </div>
-  </div>
-  <!-- About Us Page
-    ==========================================-->
-  <div id="tf-about">
-    <div class="container">
-      <div class="row">
-        <div class="col-md-6" data-anime="bottom">
-          <img src="img/SOBRE_MENTE_MX.png" class="img-responsive"
-            style="filter: drop-shadow(0 0 3px rgb(58, 58, 58))" />
-        </div>
-        <div class="col-md-6" data-anime="bottom">
-          <div class="about-text">
-            <div class="section-title">
-              <h2 data-anime="bottom" style="color: rgb(226, 226, 226)">
-                Sobre o
-              </h2>
-              <h2 data-anime="bottom" style="margin-top: 10px">
-                <strong style="color: rgb(226, 226, 226)">Mente MX</strong>
-              </h2>
-              <div class="line">
-                <hr />
-              </div>
-              <div class="clearfix"></div>
-              <div class="clearfix"></div>
-            </div>
-            <p class="intro">
-              O Mente MX é o primeiro programa de preparação Mental para
-              Pilotos do Motociclismo do Brasil, e o maior da América Latina.
-              <br /><br />
-              Com metodologia exclusiva, desenvolvida pelo Mentor João Carlos
-              Emery, o Programa de Treinamento e Mentoria, ensina num simples
-              passo a passo a como desenvolver novas habilidades mentais
-              voltadas para o Motociclismo.
-            </p>
+  </section>
 
-            <a href="#"><button id="btn-assine">ASSINE AGORA</button></a>
-          </div>
+  <!-- INSTAGRAM - Elfsight Instagram Feed | Untitled Instagram Feed -->
+  <!-- <script src="https://elfsightcdn.com/platform.js" async></script>
+    <div
+      id="div-insta"
+      class="elfsight-app-7032b4a4-1d63-4cc1-8dce-1a9814eb3d8d"
+      data-elfsight-app-lazy
+    ></div>-->
+
+  <!-- CAMPEÕES -->
+  <section id="campeoes">
+    <div class="champ-header">
+      <!--  <span class="section-label">Campeões Mentorados Social</span>-->
+      <h2 class="section-title">CAMPEÕES <span>Mentorados</span></h2>
+      <div class="divider" style="margin: 14px auto"></div>
+      <p class="section-sub" style="margin: 0 auto">
+        Alguns dos mentorados que foram campeões do Brasileiro de Motocross.
+      </p>
+    </div>
+    <div class="champ-grid">
+      <div class="champ-card">
+        <div class="champ-img">
+          <a href="https://www.instagram.com/spagnol_61/" target="_blank">
+            <img src="./img/02 - SPAGNOL.jpg" id="img-champs" alt="" />
+          </a>
+          <div class="champ-badge">Campeão</div>
+        </div>
+        <div class="champ-info">
+          <h3>Fred Spagnol #61</h3>
+          <div class="sport-tag">Motocross</div>
+          <p>
+            Piloto de alto rendimento que com a Mente MX alcançou o topo da
+            categoria, dominando pressão e foco em pista.
+          </p>
         </div>
       </div>
-    </div>
-  </div>
-
-  <!-- Team Page
-    ==========================================-->
-  <div id="tf-team" class="text-center">
-    <div class="overlay">
-      <div class="container" data-anime="left">
-        <div class="section-title center">
-          <h2>Conheça <strong>nosso time</strong></h2>
-          <div class="line">
-            <hr />
-          </div>
+      <div class="champ-card">
+        <div class="champ-img">
+          <a href="https://www.instagram.com/lucasdunka34/" target="_blank">
+            <img src="./img/01 - DUNKA.png" id="img-champs" alt="" />
+          </a>
+          <div class="champ-badge">Campeão</div>
         </div>
-
-        <div id="team" class="owl-carousel owl-theme row">
-          <div class="item">
-            <div class="thumbnail">
-              <img src="img/joao profile2.png" alt="João Carlos" class="img-circle team-img" />
-
-              <div class="caption">
-                <h3>João Carlos Emery</h3>
-                <p>CEO / Fundador</p>
-                <p>Expert em Técnicas e Estratégias Mentais.</p>
-              </div>
-            </div>
-          </div>
-          <div class="item">
-            <div class="thumbnail">
-              <img src="img/team/02.png" alt="Debora Cristine" class="img-circle team-img" />
-
-              <div class="caption">
-                <h3>Débora Cristine</h3>
-                <p>Psicóloga (CRP 12/21693)</p>
-                <p>
-                  Especialista em Logoterapia e Análise Existencial.
-                  Pós-graduanda em Avaliação Psicológica e Psicodiagnóstico.
-                </p>
-              </div>
-            </div>
-          </div>
-
-          <div class="item">
-            <div class="thumbnail">
-              <img src="img/team/03.png" alt="Marcos dos Anjos" class="img-circle team-img" />
-              <div class="caption">
-                <h3>Marcos dos Anjos</h3>
-                <p>Prof. de Neurociências</p>
-                <p>
-                  Professor Anatomia e Fisiologia Humana e Neurologia na
-                  Associação Catarinense de Ensino
-                </p>
-              </div>
-            </div>
-          </div>
-
-          <!-- <div class="item">
-              <div class="thumbnail">
-                <img
-                  src="img/team/03.jpg"
-                  alt="..."
-                  class="img-circle team-img"
-                />
-                <div class="caption">
-                  <h3>******</h3>
-                  <p>****************</p>
-                  <p>***********************</p>
-                </div>
-              </div>
-            </div>-->
+        <div class="champ-info">
+          <h3>Lucas Dunka #34</h3>
+          <div class="sport-tag">Motocross</div>
+          <p>
+            Desenvolveu mentalidade inabalável sob pressão extrema,
+            conquistando títulos expressivos no calendário nacional.
+          </p>
+        </div>
+      </div>
+      <div class="champ-card">
+        <div class="champ-img">
+          <a href="https://www.instagram.com/garmichelgiehl_4/" target="_blank">
+            <img src="./img/03 - GARMICHEL.png" id="img-champs" alt="" />
+          </a>
+          <div class="champ-badge">Campeão</div>
+        </div>
+        <div class="champ-info">
+          <h3>Garmichel Rodrigues Giehl #4</h3>
+          <div class="sport-tag">Motocross</div>
+          <p>
+            Transformou limitações mentais em força competitiva, provando que
+            a mentalidade é o diferencial entre atletas de elite.
+          </p>
         </div>
       </div>
     </div>
-  </div>
+  </section>
 
-  <!-- Services Section
-    ==========================================-->
-  <!--<div class="space"></div>-->
-  <div id="containerPlano">
-    <div class="divPlano">
-      <a href="#">
-        <img class="imgPlano" src="./img/IMG PLANO ANUAL 2.png" alt="" />
-      </a>
+  <!-- SERVIÇOS -->
+  <section id="servicos">
+    <div class="serv-header">
+      <span class="section-label">Mentorias</span>
+      <h2 class="section-title">ESCOLHA SEU <span>PLANO</span></h2>
+      <div class="divider" style="margin: 14px auto"></div>
+      <p class="section-sub" style="margin: 0 auto">
+        Do piloto amador ao profissional — temos o plano certo para o seu
+        nível e objetivos.
+      </p>
     </div>
-  </div>
-
-  <div class="containerPlano2">
-    <div class="divPlano">
-      <a href="#">
-        <button id="btn-assine2">ASSINE AGORA</button>
-      </a>
-    </div>
-  </div>
-  <!-- Clients Section
-    ==========================================-->
-  <div id="tf-clients" class="text-center">
-    <div class="overlay">
-      <div class="container">
-        <div class="section-title center">
-          <img data-anime="bottom" src="./img/Logo Capacete filtro.png" id="logoCapaPilotos" />
-
-          <h2 data-anime="bottom">Time de</h2>
-          <h2 data-anime="bottom" style="margin-top: 10px">
-            <strong>CAMPEÕES</strong>
-          </h2>
-          <div data-anime="bottom" class="line">
-            <hr />
-          </div>
-        </div>
-        <div class="divPilotos">
-          <div class="containerPilotos">
-            <div class="box" data-anime="left">
-              <!--<h3>Lucas Dunka</h3>-->
-              <img src="img/01 - DUNKA.png" title="#34 Lucas Dunka"/>
-            </div>
-            <div class="box" data-anime="top">
-              <!--<h3>Garmichel Rodrigues Giehl </h3>-->
-              <img src="img/03 - GARMICHEL.png" title="#4 Garmichel Giehl" />
-            </div>
-            <div class="box" data-anime="bottom">
-              <!--<h3>Fred Spagnol</h3>-->
-              <img src="img/02 - SPAGNOL.jpg" title="#61 Fred Spagnol" />
-            </div>
-            <div class="box" data-anime="right">
-              <!--<h3>Garmichel Rodrigues Giehl </h3>-->
-              <img src="img/04 - BRUNING.jpg" title="Gabriel Bruning" style="position: bottom left" />
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-  </div>
-
-  <!-- Testimonials Section
-    ==========================================-->
-  <!-- <div id="tf-testimonials" class="text-center">
-      <div class="overlay">
-        <div class="container">
-          <div class="section-title center">
-            <h2 data-anime="bottom"><strong>Depoimentos</strong></h2>
-            <h2 data-anime="bottom" style="margin-top: 10px">
-              dos nossos mentorados
-            </h2>
-            <div data-anime="bottom" class="line">
-              <hr />
-            </div>
-          </div>
-          <div class="row2" data-anime="bottom">
-            <div class="col-md-8 col-md-offset-2">
-              <div id="testimonial" class="owl-carousel owl-theme">
-                <div class="item">
-                  <h5>
-                    This book is a treatise on the theory of ethics, very
-                    popular during the Renaissance. The first line of Lorem
-                    Ipsum, "Lorem ipsum dolor sit amet..", comes from a line in
-                    section 1.10.32.
-                  </h5>
-                  <p><strong>Dean Martin</strong>, CEO Acme Inc.</p>
-                </div>
-
-                <div class="item">
-                  <h5>
-                    This book is a treatise on the theory of ethics, very
-                    popular during the Renaissance. The first line of Lorem
-                    Ipsum, "Lorem ipsum dolor sit amet..", comes from a line in
-                    section 1.10.32.
-                  </h5>
-                  <p><strong>Dean Martin</strong>, CEO Acme Inc.</p>
-                </div>
-
-                <div class="item">
-                  <h5>
-                    This book is a treatise on the theory of ethics, very
-                    popular during the Renaissance. The first line of Lorem
-                    Ipsum, "Lorem ipsum dolor sit amet..", comes from a line in
-                    section 1.10.32.
-                  </h5>
-                  <p><strong>Dean Martin</strong>, CEO Acme Inc.</p>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-  -->
-  <div class="containerFAQ" id="faq-text">
-
-    <h2 data-anime="bottom" style="color: white;" >Perguntas</h2>
-    <h2 data-anime="bottom" style="margin-top: 15px; margin-bottom: 30px; color: rgb(154, 154, 154);">
-      <strong >Frequentes</strong>
-    </h2>
-
-    <p>
-      <button data-anime="bottom" class="btn btn-warning" type="button" data-toggle="collapse" data-target="#FAQ1" aria-expanded="false"
-        aria-controls="collapseExample">
-        Como Funciona o Curso?
-      </button>
-    </p>
-    <div class="collapse" id="FAQ1">
-      <div class="card card-body">
-        Você terá acesso a uma série de vídeo aulas gravadas que estarão disponíveis em Plataforma, mais um treinamento
-        online ao vivo em grupo por mês.
-      </div>
-    </div>
-
-    <p>
-      <button data-anime="bottom" class="btn btn-warning" type="button" data-toggle="collapse" data-target="#FAQ2" aria-expanded="false"
-        aria-controls="collapseExample">
-        Vou conseguir tirar dúvidas durante o curso?
-      </button>
-    </p>
-    <div class="collapse" id="FAQ2">
-      <div class="card card-body">
-        Sim! Após o seu ingresso no curso, você será incluso em um grupo exclusivo no whatsapp, onde vocÇe vai poder
-        tirar todas as suas dúvidas.
-      </div>
-    </div>
-
-    <p>
-      <button data-anime="bottom" class="btn btn-warning" type="button" data-toggle="collapse" data-target="#FAQ3" aria-expanded="false"
-        aria-controls="collapseExample">
-        Por quanto tempo vou ter acesso ao curso?
-      </button>
-    </p>
-    <div class="collapse" id="FAQ3">
-      <div class="card card-body">
-        Seu acesso estará disponível por 1 ano.
-      </div>
-    </div>
-
-    <p>
-      <button data-anime="bottom" class="btn btn-warning" type="button" data-toggle="collapse" data-target="#FAQ4" aria-expanded="false"
-        aria-controls="collapseExample">
-        Quais formas de pagamento disponíveis?
-      </button>
-    </p>
-    <div class="collapse" id="FAQ4">
-      <div class="card card-body">
-        Estão disponíveis três formas de pagamento: Cartão de Crédito (pagamento em até dois cartões), boleto ou PIX.
-        No cartão você pode parcelar em até 12x (há incidência de juros). Não há opção de parcelamento para PIX ou
-        boleto.
-      </div>
-    </div>
-  
-  <p>
-    <button data-anime="bottom" class="btn btn-warning" type="button" data-toggle="collapse" data-target="#FAQ5" aria-expanded="false"
-      aria-controls="collapseExample">
-      Tem Certificado?
-    </button>
-  </p>
-  <div class="collapse" id="FAQ5">
-    <div class="card card-body">
-      Sim! Após concluir 100% das vídeo aulas, você poderá imprimir o seu certificado. Porém, o mais importante é a
-      transformação que o curso vai gerar em você.
-    </div>
-  </div>
-
-</div>
-
-  <!-- Contact Section
-    ==========================================-->
-  <div id="tf-contact" class="text-center">
-    <div class="container">
-      <div class="row2" data-anime="bottom">
-        <div class="col-md-8 col-md-offset-2">
-          <div class="section-title center">
-            <h2>Envie abaixo</h2>
-            <h2 style="margin-top: 10px"><strong>a sua mensagem</strong></h2>
-            <div class="line">
-              <hr />
-            </div>
-            <div class="clearfix"></div>
-            <medium><em>ENDEREÇO:
-                <br />
-                <a
-                  href="https://www.google.com/maps/place/R.+Dr.+Jo%C3%A3o+Colin,+1285+-+Am%C3%A9rica,+Joinville+-+SC,+89204-001/@-26.2895392,-48.8488192,17z/data=!3m1!4b1!4m6!3m5!1s0x94deb02f99c2f177:0x2b21c2ae4fed0ff2!8m2!3d-26.2895392!4d-48.8488192!16s%2Fg%2F11c43w7g3t?entry=ttu">
-                  Rua Dr. João Colin, 1285 América, Joinville - SC
-                  <br />
-                  CEP: 89204-001</em>
-              </a>
-
-
-            </medium>
-            <br />
-            <medium>
-              <em>
-                TELEFONE: <a href="tel:+4799172-6582">(47) 99172-6582</a>
-
-                <br />
-                E-MAIL:
-                <br />
-                <a href="mailto:adm@mentemx.com.br">adm@mentemx.com.br</a>
-              </em>
-            </medium>
-          </div>
-
-          <form action="mailto:adm@mentemx.com.br" method="GET">
-            <div class="row" id="form-group">
-              <div>
-                <div class="form-group">
-                  <label for="exampleInputEmail1">Email</label>
-                  <br />
-                  <input type="email" class="form-control" id="exampleInputEmail1" placeholder="Insira seu email"
-                    required />
-                </div>
-              </div>
-              <div>
-                <div class="form-group">
-                  <label for="exampleInputTelefone1">Telefone</label>
-                  <br />
-                  <input type="text" class="form-control" id="exampleInputTelefone1" placeholder="Insira seu Telefone"
-                    required />
-                </div>
-              </div>
-              <div class="form-group">
-                <label for="exampleInputMensagem1">Mensagem</label>
-                <br />
-                <textarea rows="3" style="resize: none" id="exampleInputMensagem1" placeholder="Deixe a sua mensagem"
-                  required minlength="10"></textarea>
-              </div>
-            </div>
-            <button type="submit" class="btn tf-btn btn-default">
-              Enviar
-            </button>
-          </form>
-        </div>
-      </div>
-    </div>
-  </div>
-
-  <nav id="footer">
-    <div class="container">
-      <div class="pull-left fnav">
-        <a href="index.html" id="url-footer">mentemx.com.br</a>
-        <p>Mente MX © 2023.</p>
-        <p>TODOS OS DIREITOS RESERVADOS.</p>
-        <p style="color: #4f4f4f">Criado por Philippe Rocca Bretas</p>
-        <ul class="footer-social">
-          <li>
-            <a href="https://www.facebook.com/mentemxoficial" target="_blank"><i class="fa fa-facebook"></i></a>
-          </li>
-          <li>
-            <a href="https://www.instagram.com/mentemx/" target="_blank"><i class="fa fa-instagram"></i></a>
-          </li>
-          <li>
-            <a href="mailto:adm@mentemx.com.br"><i class="fa fa-google-plus"></i></a>
-          </li>
-          <li>
-            <a href="tel: +55 (47) 99172-6582"><i class="fa fa-phone"></i></a>
-          </li>
+    <div class="serv-grid">
+      <div class="serv-card">
+        <div class="serv-icon">⚡</div>
+        <h3>Mentoria em grupo</h3>
+        <p>
+          Pacote mensal de mentoria para pilotos que querem resolver um
+          ponto específico da performance.
+        </p>
+        <div class="serv-price">R$ 1799 <span>/ pacote</span></div>
+        <ul class="serv-list">
+          <li>7 mentorias de 1 hora e 30 minutos</li>
+          <li>Diagnóstico mental do atleta</li>
+          <li>Plano de ação personalizado</li>
+          <li>Suporte via WhatsApp por 7 dias</li>
         </ul>
+        <a href="https://wa.me/5547992108650?text=Quero+a+Sessão+Individual" target="_blank"
+          class="btn-serv">Contratar</a>
       </div>
-      <div class="pull-right fnav"></div>
+      <div class="serv-card featured">
+        <div class="feat-tag">Pacote Familia MX</div>
+        <div class="serv-icon">🏆</div>
+        <h3>Pacote Família MX</h3>
+        <p>
+          Acompanhamento contínuo para atletas em busca de evolução constante
+          e consistência em campeonatos.
+        </p>
+        <div class="serv-price">R$ 5799 <span>/ pacote</span></div>
+        <ul class="serv-list">
+          <li>7 mentorias mensais (1x/semana)</li>
+          <li>Análise de performance pós-prova</li>
+          <li>Rotinas mentais personalizadas</li>
+          <li>Suporte ilimitado via WhatsApp</li>
+          <li>Relatório mensal de evolução</li>
+        </ul>
+        <a href="https://wa.me/5547992108650?text=Quero+o+Plano+Mensal" target="_blank" class="btn-serv">Contratar</a>
+      </div>
+      <div class="serv-card">
+        <div class="serv-icon">🎓</div>
+        <h3>Pacote Equipe MX</h3>
+        <p>
+          O programa completo para pilotos que querem competir por títulos
+          nacionais com suporte total.
+        </p>
+        <div class="serv-price">Consulte<span>/ ano</span></div>
+        <ul class="serv-list">
+          <li>Sessões semanais ilimitadas</li>
+          <li>Acompanhamento em competições</li>
+          <li>Curso completo de mentalidade</li>
+          <li>Acesso antecipado ao Mente MX Pro</li>
+          <li>Suporte VIP 24/7</li>
+          <li>Comunidade exclusiva de atletas</li>
+        </ul>
+        <a href="https://wa.me/5547992108650?text=Quero+o+Programa+Anual" target="_blank" class="btn-serv">Contratar</a>
+      </div>
     </div>
-  </nav>
+  </section>
 
-  <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
-  <script defer src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
-  <script defer type="text/javascript" src="js/jquery.1.11.1.js"></script>
-  <!-- Include all compiled plugins (below), or include individual files as needed -->
-  <script defer type="text/javascript" src="js/bootstrap.js"></script>
-  <script defer type="text/javascript" src="js/SmoothScroll.js"></script>
-  <script defer type="text/javascript" src="js/jquery.isotope.js"></script>
-  <script defer src="js/owl.carousel.js"></script>
+  <!-- ESPORTES -->
+  <section id="esportes">
+    <div class="sports-header">
+      <!-- <span class="section-label">Modalidades</span>-->
+      <h2 class="section-title">MODALIDADES <span>ATENDIDAS</span></h2>
+      <div class="divider" style="margin: 14px auto"></div>
+    </div>
+    <div class="sports-grid">
+      <div class="sport-card">
+        <span class="sport-icon">🏍️</span>
+        <h3>Motocross</h3>
+        <p>
+          Nossa especialidade. Formamos campeões no motocross brasileiro com
+          metodologia testada em pista.
+        </p>
+      </div>
+      <div class="sport-card">
+        <span class="sport-icon">🏜️</span>
+        <h3>Rally</h3>
+        <p>
+          Mentoria para pilotos de rally que enfrentam condições extremas e
+          precisam de foco total nas etapas.
+        </p>
+      </div>
+      <div class="sport-card">
+        <span class="sport-icon">🌲</span>
+        <h3>Enduro</h3>
+        <p>
+          Resistência mental para longas provas de enduro, onde o psicológico
+          é o principal diferencial.
+        </p>
+      </div>
+      <div class="sport-card">
+        <span class="sport-icon">⚡</span>
+        <h3>Outras modalidades radicais</h3>
+        <p>
+          Supercross, trilha competitiva e demais esportes de adrenalina com
+          demandas mentais elevadas.
+        </p>
+      </div>
+    </div>
+  </section>
 
-  <!-- Javascripts
-    ================================================== -->
-  <script defer type="text/javascript" src="js/main.js"></script>
-  <script defer async src="https://duz4dqsaqembt.cloudfront.net/client/whats.js"></script>
+  <!-- DEPOIMENTOS -->
+  <section id="depoimentos">
+    <div class="test-header">
+      <!--<span class="section-label">O que dizem os atletas</span>-->
+      <h2 class="section-title">DEPOIMENTOS <span>DOS PAIS</span></h2>
+      <div class="divider" style="margin: 14px auto"></div>
+    </div>
+
+    <div class="test-grid">
+      <div class="test-card">
+        <div class="test-stars">★★★★★</div>
+        <p>
+          Maravilhosa. Estou aprendendo muito, despertando um novo olhar para nosso esporte e feliz por poder estar
+          ajudando meu piloto em sua evolução. Top D++++
+        </p>
+        <div class="test-author">
+          <div class="test-av">LD</div>
+          <div class="test-info">
+            <h4>Lidiane Durante</h4>
+            <span>Mãe de Mentorado</span>
+          </div>
+        </div>
+      </div>
+      <div class="test-card">
+        <div class="test-stars">★★★★★</div>
+        <p>
+          Foi uma mentoria para mostrar que nosso caminho estava certo em alguns percursos, tivemos um realinhamento nas
+          funções da família Time FC, nosso piloto Emanuel Vitor 77, hoje tem mais exemplos de como direcionar a rotina
+          e sequência dentro do Motocross, identificamos os valores de cada instante vividos dentro do treino, corridas
+          e percursos das viagens. Agradecemos a atenção, cada dica, as palavras que ajuda a ver o valor final que
+          estamos vivendo neste universo do MX.
+        </p>
+        <div class="test-author">
+          <div class="test-av">PN</div>
+          <div class="test-info">
+            <h4>Patrícia Nacife</h4>
+            <span>Mãe de Mentorado</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="test-card">
+        <div class="test-stars">★★★★★</div>
+        <p>
+          Profissional de grande experiência, atende as expectativas buscadas.
+        </p>
+        <div class="test-author">
+          <div class="test-av">AC</div>
+          <div class="test-info">
+            <h4>Adenilson Ceconi</h4>
+            <span>Pai de Mentorado</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- APP Mente MX PRO-->
+  <section id="app">
+    <div class="app-inner">
+      <div>
+        <div class="app-badge">🚀 EM BREVE</div>
+        <h2 class="app-title">
+          Mente MX<br /><span class="an">PRO</span> <span class="ap">APP</span>
+        </h2>
+        <p class="app-desc">
+          O aplicativo exclusivo para pilotos que treinam com a Mente MX.
+          Tecnologia e ciência do esporte na palma da sua mão — em
+          desenvolvimento.
+        </p>
+        <div class="app-feats">
+          <div class="af">
+            <div class="af-icon">🧠</div>
+            <span class="af-text">Treinos mentais guiados e rotinas de foco pré-prova</span>
+          </div>
+          <div class="af">
+            <div class="af-icon">📊</div>
+            <span class="af-text">Acompanhamento de performance e evolução por treino</span>
+          </div>
+          <div class="af">
+            <div class="af-icon">🎯</div>
+            <span class="af-text">Metas e planejamento de temporada integrados</span>
+          </div>
+          <div class="af">
+            <div class="af-icon">💬</div>
+            <span class="af-text">Comunicação direta com o coach em tempo real</span>
+          </div>
+        </div>
+        <div class="waitlist-box">
+          <h3>Entre na Lista de Espera</h3>
+          <p>
+            Seja o primeiro a acessar o Mente MX Pro. Membros ganham acesso
+            antecipado e desconto exclusivo.
+          </p>
+          <div class="wl-form">
+            <input type="text" id="wl-name" placeholder="Seu nome completo" />
+            <input type="email" id="wl-email" placeholder="Seu melhor e-mail" />
+            <input type="text" id="wl-sport" placeholder="Sua modalidade (ex: Motocross, Rally...)" />
+            <button class="btn-wl" onclick="joinWaitlist()">
+              🚀 Quero Acesso Antecipado
+            </button>
+          </div>
+          <div class="success-msg" id="wl-ok">
+            ✅ Você entrou na lista! Avisaremos assim que o Mente MX Pro
+            estiver disponível.
+          </div>
+        </div>
+      </div>
+      <div class="phone-wrap">
+        <div class="phone">
+          <div class="phone-screen">
+            <div class="ph-logo">
+              <img src="./img/Logo Capacete.png" id="logo-phone" alt="" />
+            </div>
+            <div class="ph-title">Mente MX<br /><span>PRO</span></div>
+            <div class="ph-soon">EM BREVE</div>
+            <div class="ph-bars">
+              <div class="ph-bar"></div>
+              <div class="ph-bar"></div>
+              <div class="ph-bar"></div>
+              <div class="ph-bar"></div>
+              <div class="ph-bar"></div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+
+  <!-- FAQ -->
+  <section id="faq">
+    <div class="faq-header">
+      <span class="section-label">Dúvidas Frequentes</span>
+      <h2 class="section-title">FAQ — PERGUNTAS <span>FREQUENTES</span></h2>
+      <div class="divider" style="margin: 14px auto"></div>
+    </div>
+    <div class="faq-wrap">
+      <div class="faq-item">
+        <div class="faq-q" onclick="toggleFaq(this)">
+          <h4>O Mente MX atende pilotos amadores?</h4>
+          <div class="faq-toggle">+</div>
+        </div>
+        <div class="faq-a">
+          <p>
+            Sim! Pilotos amadores frequentemente têm os maiores ganhos com o
+            Mente MX, pois eliminam bloqueios que impedem o
+            desenvolvimento técnico. A mentalidade é fundamental em qualquer
+            nível competitivo.
+          </p>
+        </div>
+      </div>
+      <div class="faq-item">
+        <div class="faq-q" onclick="toggleFaq(this)">
+          <h4>As mentorias são presenciais ou online?</h4>
+          <div class="faq-toggle">+</div>
+        </div>
+        <div class="faq-a">
+          <p>
+            Trabalhamos tanto presencialmente quanto online via videochamada.
+            O formato online permite que pilotos de qualquer lugar do mundo
+            recebam o mesmo nível de mentoria com total eficácia.
+          </p>
+        </div>
+      </div>
+      <div class="faq-item">
+        <div class="faq-q" onclick="toggleFaq(this)">
+          <h4>Em quanto tempo vejo resultados?</h4>
+          <div class="faq-toggle">+</div>
+        </div>
+        <div class="faq-a">
+          <p>
+            Muitos pilotos já relatam diferença na primeiro encontro,
+            especialmente no controle da ansiedade pré-prova. Resultados
+            consistentes aparecem entre 2 e 4 semanas de acompanhamento
+            contínuo.
+          </p>
+        </div>
+      </div>
+      <div class="faq-item">
+        <div class="faq-q" onclick="toggleFaq(this)">
+          <h4>A mentoria atende apenas pilotos de motocross?</h4>
+          <div class="faq-toggle">+</div>
+        </div>
+        <div class="faq-a">
+          <p>
+            Não! Atendemos pilotos do motocross, rally, enduro, supercross e
+            outras modalidades Off-Road. A metodologia Mente MX é adaptada para
+            cada modalidade e perfil de atleta.
+          </p>
+        </div>
+      </div>
+      <div class="faq-item">
+        <div class="faq-q" onclick="toggleFaq(this)">
+          <h4>Como funciona o suporte entre as sessões?</h4>
+          <div class="faq-toggle">+</div>
+        </div>
+        <div class="faq-a">
+          <p>
+            Dependendo do plano escolhido, oferecemos suporte via WhatsApp de
+            7 dias até ilimitado. Você pode tirar dúvidas, compartilhar
+            resultados e receber orientações entre as sessões formais.
+          </p>
+        </div>
+      </div>
+      <div class="faq-item">
+        <div class="faq-q" onclick="toggleFaq(this)">
+          <h4>O que é o Mente MX Pro e quando será lançado?</h4>
+          <div class="faq-toggle">+</div>
+        </div>
+        <div class="faq-a">
+          <p>
+            O Mente MX Pro é nosso aplicativo exclusivo em desenvolvimento, que
+            reunirá treinos mentais, acompanhamento de performance, metas de
+            temporada e comunicação com o mentor. Entre na lista de espera para
+            acesso antecipado!
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CONTATO -->
+  <section id="contato">
+    <div class="contact-grid">
+      <div class="contact-info">
+        <span class="section-label">Fale Conosco</span>
+        <h2 class="section-title">
+          VOCÊ ESTÁ PRONTO?
+          <br>
+          <span>BORA PRA CIMA!</span>
+        </h2>
+        <div class="divider"></div>
+        <p>
+          Entre em contato agora e dê o primeiro passo para transformar sua
+          mentalidade e seus resultados em pista.
+        </p>
+        <div class="c-item">
+          <div class="c-icon"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
+              class="bi bi-whatsapp" viewBox="0 0 16 16">
+              <path
+                d="M13.601 2.326A7.85 7.85 0 0 0 7.994 0C3.627 0 .068 3.558.064 7.926c0 1.399.366 2.76 1.057 3.965L0 16l4.204-1.102a7.9 7.9 0 0 0 3.79.965h.004c4.368 0 7.926-3.558 7.93-7.93A7.9 7.9 0 0 0 13.6 2.326zM7.994 14.521a6.6 6.6 0 0 1-3.356-.92l-.24-.144-2.494.654.666-2.433-.156-.251a6.56 6.56 0 0 1-1.007-3.505c0-3.626 2.957-6.584 6.591-6.584a6.56 6.56 0 0 1 4.66 1.931 6.56 6.56 0 0 1 1.928 4.66c-.004 3.639-2.961 6.592-6.592 6.592m3.615-4.934c-.197-.099-1.17-.578-1.353-.646-.182-.065-.315-.099-.445.099-.133.197-.513.646-.627.775-.114.133-.232.148-.43.05-.197-.1-.836-.308-1.592-.985-.59-.525-.985-1.175-1.103-1.372-.114-.198-.011-.304.088-.403.087-.088.197-.232.296-.346.1-.114.133-.198.198-.33.065-.134.034-.248-.015-.347-.05-.099-.445-1.076-.612-1.47-.16-.389-.323-.335-.445-.34-.114-.007-.247-.007-.38-.007a.73.73 0 0 0-.529.247c-.182.198-.691.677-.691 1.654s.71 1.916.81 2.049c.098.133 1.394 2.132 3.383 2.992.47.205.84.326 1.129.418.475.152.904.129 1.246.08.38-.058 1.171-.48 1.338-.943.164-.464.164-.86.114-.943-.049-.084-.182-.133-.38-.232" />
+            </svg></div>
+          <div class="c-text">
+            <span>WhatsApp</span><a href="https://wa.me/5547992108650" target="_blank">+55 47 99210-8650</a>
+          </div>
+        </div>
+        <div class="c-item">
+          <div class="c-icon">📍</div>
+          <div class="c-text">
+            <span>Atendimento</span>
+            <p>Brasil — Online para o mundo todo</p>
+          </div>
+        </div>
+        <div class="social-row">
+          <a href="https://www.instagram.com/mentemx/" target="_blank" class="soc-btn"><svg
+              xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-instagram"
+              viewBox="0 0 16 16">
+              <path
+                d="M8 0C5.829 0 5.556.01 4.703.048 3.85.088 3.269.222 2.76.42a3.9 3.9 0 0 0-1.417.923A3.9 3.9 0 0 0 .42 2.76C.222 3.268.087 3.85.048 4.7.01 5.555 0 5.827 0 8.001c0 2.172.01 2.444.048 3.297.04.852.174 1.433.372 1.942.205.526.478.972.923 1.417.444.445.89.719 1.416.923.51.198 1.09.333 1.942.372C5.555 15.99 5.827 16 8 16s2.444-.01 3.298-.048c.851-.04 1.434-.174 1.943-.372a3.9 3.9 0 0 0 1.416-.923c.445-.445.718-.891.923-1.417.197-.509.332-1.09.372-1.942C15.99 10.445 16 10.173 16 8s-.01-2.445-.048-3.299c-.04-.851-.175-1.433-.372-1.941a3.9 3.9 0 0 0-.923-1.417A3.9 3.9 0 0 0 13.24.42c-.51-.198-1.092-.333-1.943-.372C10.443.01 10.172 0 7.998 0zm-.717 1.442h.718c2.136 0 2.389.007 3.232.046.78.035 1.204.166 1.486.275.373.145.64.319.92.599s.453.546.598.92c.11.281.24.705.275 1.485.039.843.047 1.096.047 3.231s-.008 2.389-.047 3.232c-.035.78-.166 1.203-.275 1.485a2.5 2.5 0 0 1-.599.919c-.28.28-.546.453-.92.598-.28.11-.704.24-1.485.276-.843.038-1.096.047-3.232.047s-2.39-.009-3.233-.047c-.78-.036-1.203-.166-1.485-.276a2.5 2.5 0 0 1-.92-.598 2.5 2.5 0 0 1-.6-.92c-.109-.281-.24-.705-.275-1.485-.038-.843-.046-1.096-.046-3.233s.008-2.388.046-3.231c.036-.78.166-1.204.276-1.486.145-.373.319-.64.599-.92s.546-.453.92-.598c.282-.11.705-.24 1.485-.276.738-.034 1.024-.044 2.515-.045zm4.988 1.328a.96.96 0 1 0 0 1.92.96.96 0 0 0 0-1.92m-4.27 1.122a4.109 4.109 0 1 0 0 8.217 4.109 4.109 0 0 0 0-8.217m0 1.441a2.667 2.667 0 1 1 0 5.334 2.667 2.667 0 0 1 0-5.334" />
+            </svg> Instagram</a>
+          <a href="https://www.facebook.com/mentemxoficial/" target="_blank" class="soc-btn"><svg
+              xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-facebook"
+              viewBox="0 0 16 16">
+              <path
+                d="M16 8.049c0-4.446-3.582-8.05-8-8.05C3.58 0-.002 3.603-.002 8.05c0 4.017 2.926 7.347 6.75 7.951v-5.625h-2.03V8.05H6.75V6.275c0-2.017 1.195-3.131 3.022-3.131.876 0 1.791.157 1.791.157v1.98h-1.009c-.993 0-1.303.621-1.303 1.258v1.51h2.218l-.354 2.326H9.25V16c3.824-.604 6.75-3.934 6.75-7.951" />
+            </svg> Facebook</a>
+          <a href="https://www.youtube.com/@mentemx4299" target="_blank" class="soc-btn"><svg
+              xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-youtube"
+              viewBox="0 0 16 16">
+              <path
+                d="M8.051 1.999h.089c.822.003 4.987.033 6.11.335a2.01 2.01 0 0 1 1.415 1.42c.101.38.172.883.22 1.402l.01.104.022.26.008.104c.065.914.073 1.77.074 1.957v.075c-.001.194-.01 1.108-.082 2.06l-.008.105-.009.104c-.05.572-.124 1.14-.235 1.558a2.01 2.01 0 0 1-1.415 1.42c-1.16.312-5.569.334-6.18.335h-.142c-.309 0-1.587-.006-2.927-.052l-.17-.006-.087-.004-.171-.007-.171-.007c-1.11-.049-2.167-.128-2.654-.26a2.01 2.01 0 0 1-1.415-1.419c-.111-.417-.185-.986-.235-1.558L.09 9.82l-.008-.104A31 31 0 0 1 0 7.68v-.123c.002-.215.01-.958.064-1.778l.007-.103.003-.052.008-.104.022-.26.01-.104c.048-.519.119-1.023.22-1.402a2.01 2.01 0 0 1 1.415-1.42c.487-.13 1.544-.21 2.654-.26l.17-.007.172-.006.086-.003.171-.007A100 100 0 0 1 7.858 2zM6.4 5.209v4.818l4.157-2.408z" />
+            </svg> YouTube</a>
+        </div>
+      </div>
+
+      <div class="c-form">
+        <h3>Envie uma Mensagem</h3>
+        <p>Deixe aqui a sua mensagem, preencha o formulário.<br>
+          Retornaremos o mais breve possível.</p>
+        <div class="fg">
+          <label>Nome</label><input type="text" id="c-name" placeholder="Seu nome completo" />
+        </div>
+        <div class="fg">
+          <label>WhatsApp</label><input type="text" id="c-wa" placeholder="+55 (xx) xxxxx-xxxx" />
+        </div>
+        <div class="fg">
+          <label>E-mail</label><input type="email" id="c-email" placeholder="seu@email.com" />
+        </div>
+        <div class="fg">
+          <label>Modalidade</label>
+          <select id="c-sport">
+            <option value="">Selecione sua modalidade</option>
+            <option>Motocross</option>
+            <option>Rally</option>
+            <option>Enduro</option>
+            <option>Supercross</option>
+            <option>Outro</option>
+          </select>
+        </div>
+        <div class="fg">
+          <label>Mensagem</label><textarea id="c-msg" placeholder="Conte sobre seus objetivos e desafios..."></textarea>
+        </div>
+        <button class="btn-submit" onclick="sendContact()">
+          Enviar Mensagem
+        </button>
+        <div class="success-msg" id="c-ok">
+          ✅ Mensagem enviada! Retornaremos em breve via WhatsApp ou e-mail.
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer>
+    <div class="footer-inner">
+      <div class="footer-top">
+        <div class="footer-brand">
+          <img src="./img/Logo Mente MX - Oficial.png" id="logo-footer" alt="" />
+          <p>
+            Formando campeões através do poder da mente. Coaching mental
+            especializado para atletas de motocross e esportes radicais.
+          </p>
+        </div>
+        <div class="footer-col">
+          <h4>Navegação</h4>
+          <ul>
+            <li><a href="#sobre">Sobre o Coach</a></li>
+            <li><a href="#campeoes">Campeões</a></li>
+            <li><a href="#servicos">Serviços</a></li>
+            <li><a href="#app">Mente MX Pro</a></li>
+            <!-- <li><a href="#loja">Loja</a></li>-->
+            <li><a href="#faq">FAQ</a></li>
+            <li><a href="#contato">Contato</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h4>Redes Sociais</h4>
+          <ul>
+            <li>
+              <a href="https://www.instagram.com/mentemx/" target="_blank"><svg xmlns="http://www.w3.org/2000/svg"
+                  width="16" height="16" fill="currentColor" class="bi bi-instagram" viewBox="0 0 16 16">
+                  <path
+                    d="M8 0C5.829 0 5.556.01 4.703.048 3.85.088 3.269.222 2.76.42a3.9 3.9 0 0 0-1.417.923A3.9 3.9 0 0 0 .42 2.76C.222 3.268.087 3.85.048 4.7.01 5.555 0 5.827 0 8.001c0 2.172.01 2.444.048 3.297.04.852.174 1.433.372 1.942.205.526.478.972.923 1.417.444.445.89.719 1.416.923.51.198 1.09.333 1.942.372C5.555 15.99 5.827 16 8 16s2.444-.01 3.298-.048c.851-.04 1.434-.174 1.943-.372a3.9 3.9 0 0 0 1.416-.923c.445-.445.718-.891.923-1.417.197-.509.332-1.09.372-1.942C15.99 10.445 16 10.173 16 8s-.01-2.445-.048-3.299c-.04-.851-.175-1.433-.372-1.941a3.9 3.9 0 0 0-.923-1.417A3.9 3.9 0 0 0 13.24.42c-.51-.198-1.092-.333-1.943-.372C10.443.01 10.172 0 7.998 0zm-.717 1.442h.718c2.136 0 2.389.007 3.232.046.78.035 1.204.166 1.486.275.373.145.64.319.92.599s.453.546.598.92c.11.281.24.705.275 1.485.039.843.047 1.096.047 3.231s-.008 2.389-.047 3.232c-.035.78-.166 1.203-.275 1.485a2.5 2.5 0 0 1-.599.919c-.28.28-.546.453-.92.598-.28.11-.704.24-1.485.276-.843.038-1.096.047-3.232.047s-2.39-.009-3.233-.047c-.78-.036-1.203-.166-1.485-.276a2.5 2.5 0 0 1-.92-.598 2.5 2.5 0 0 1-.6-.92c-.109-.281-.24-.705-.275-1.485-.038-.843-.046-1.096-.046-3.233s.008-2.388.046-3.231c.036-.78.166-1.204.276-1.486.145-.373.319-.64.599-.92s.546-.453.92-.598c.282-.11.705-.24 1.485-.276.738-.034 1.024-.044 2.515-.045zm4.988 1.328a.96.96 0 1 0 0 1.92.96.96 0 0 0 0-1.92m-4.27 1.122a4.109 4.109 0 1 0 0 8.217 4.109 4.109 0 0 0 0-8.217m0 1.441a2.667 2.667 0 1 1 0 5.334 2.667 2.667 0 0 1 0-5.334" />
+                </svg> Instagram</a>
+            </li>
+            <li>
+              <a href="https://www.facebook.com/mentemxoficial/" target="_blank"><svg xmlns="http://www.w3.org/2000/svg"
+                  width="16" height="16" fill="currentColor" class="bi bi-facebook" viewBox="0 0 16 16">
+                  <path
+                    d="M16 8.049c0-4.446-3.582-8.05-8-8.05C3.58 0-.002 3.603-.002 8.05c0 4.017 2.926 7.347 6.75 7.951v-5.625h-2.03V8.05H6.75V6.275c0-2.017 1.195-3.131 3.022-3.131.876 0 1.791.157 1.791.157v1.98h-1.009c-.993 0-1.303.621-1.303 1.258v1.51h2.218l-.354 2.326H9.25V16c3.824-.604 6.75-3.934 6.75-7.951" />
+                </svg> Facebook</a>
+            </li>
+            <li>
+              <a href="https://www.youtube.com/@mentemx4299" target="_blank"><svg xmlns="http://www.w3.org/2000/svg"
+                  width="16" height="16" fill="currentColor" class="bi bi-youtube" viewBox="0 0 16 16">
+                  <path
+                    d="M8.051 1.999h.089c.822.003 4.987.033 6.11.335a2.01 2.01 0 0 1 1.415 1.42c.101.38.172.883.22 1.402l.01.104.022.26.008.104c.065.914.073 1.77.074 1.957v.075c-.001.194-.01 1.108-.082 2.06l-.008.105-.009.104c-.05.572-.124 1.14-.235 1.558a2.01 2.01 0 0 1-1.415 1.42c-1.16.312-5.569.334-6.18.335h-.142c-.309 0-1.587-.006-2.927-.052l-.17-.006-.087-.004-.171-.007-.171-.007c-1.11-.049-2.167-.128-2.654-.26a2.01 2.01 0 0 1-1.415-1.419c-.111-.417-.185-.986-.235-1.558L.09 9.82l-.008-.104A31 31 0 0 1 0 7.68v-.123c.002-.215.01-.958.064-1.778l.007-.103.003-.052.008-.104.022-.26.01-.104c.048-.519.119-1.023.22-1.402a2.01 2.01 0 0 1 1.415-1.42c.487-.13 1.544-.21 2.654-.26l.17-.007.172-.006.086-.003.171-.007A100 100 0 0 1 7.858 2zM6.4 5.209v4.818l4.157-2.408z" />
+                </svg> YouTube</a>
+            </li>
+            <li>
+              <a href="https://wa.me/5547992108650" target="_blank"><svg xmlns="http://www.w3.org/2000/svg" width="16"
+                  height="16" fill="currentColor" class="bi bi-whatsapp" viewBox="0 0 16 16">
+                  <path
+                    d="M13.601 2.326A7.85 7.85 0 0 0 7.994 0C3.627 0 .068 3.558.064 7.926c0 1.399.366 2.76 1.057 3.965L0 16l4.204-1.102a7.9 7.9 0 0 0 3.79.965h.004c4.368 0 7.926-3.558 7.93-7.93A7.9 7.9 0 0 0 13.6 2.326zM7.994 14.521a6.6 6.6 0 0 1-3.356-.92l-.24-.144-2.494.654.666-2.433-.156-.251a6.56 6.56 0 0 1-1.007-3.505c0-3.626 2.957-6.584 6.591-6.584a6.56 6.56 0 0 1 4.66 1.931 6.56 6.56 0 0 1 1.928 4.66c-.004 3.639-2.961 6.592-6.592 6.592m3.615-4.934c-.197-.099-1.17-.578-1.353-.646-.182-.065-.315-.099-.445.099-.133.197-.513.646-.627.775-.114.133-.232.148-.43.05-.197-.1-.836-.308-1.592-.985-.59-.525-.985-1.175-1.103-1.372-.114-.198-.011-.304.088-.403.087-.088.197-.232.296-.346.1-.114.133-.198.198-.33.065-.134.034-.248-.015-.347-.05-.099-.445-1.076-.612-1.47-.16-.389-.323-.335-.445-.34-.114-.007-.247-.007-.38-.007a.73.73 0 0 0-.529.247c-.182.198-.691.677-.691 1.654s.71 1.916.81 2.049c.098.133 1.394 2.132 3.383 2.992.47.205.84.326 1.129.418.475.152.904.129 1.246.08.38-.058 1.171-.48 1.338-.943.164-.464.164-.86.114-.943-.049-.084-.182-.133-.38-.232" />
+                </svg> WhatsApp</a>
+            </li>
+          </ul>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <p>© 2025 <span>Mente MX</span>. Todos os direitos reservados.</p>
+        <p>Feito com <span>🍀</span> para campeões</p>
+      </div>
+    </div>
+  </footer>
+
 </body>
 
 </html>
