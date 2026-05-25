@@ -1836,12 +1836,7 @@ footer {
     text-align: center;
     letter-spacing: .3px
 }
-    text-align: center;
-    margin-top: 28px;
-    padding: 0 5%;
-    color: #777;
-    font-size: .82rem
-}
+
 
 .shop-partnership a {
     color: var(--orange);
