@@ -212,42 +212,30 @@ nav {
     background: linear-gradient(135deg, rgba(10, 10, 10, .88) 0%, rgba(255, 107, 0, .08) 60%, rgba(10, 10, 10, .7) 100%)
 }
 
-/* Grid: logo esquerda | texto direita */
+/* Conteúdo centralizado */
 .hero-content {
     position: relative;
     z-index: 2;
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    align-items: center;
-    gap: 40px;
-    width: 100%;
-    max-width: 1100px;
-    padding: 80px 5% 20px
+    text-align: center;
+    padding: 80px 20px 20px;
+    max-width: 900px;
+    width: 100%
 }
 
-/* Logo — lado esquerdo */
 .hero-logo {
+    margin-bottom: 16px;
     display: flex;
-    align-items: center;
     justify-content: center
 }
 
 #logo-hero {
-    width: clamp(200px, 30vw, 380px);
-    transition: 1.0s;
-    filter: drop-shadow(0 0 40px rgba(255, 107, 0, .15))
+    width: clamp(180px, 28vw, 300px);
+    transition: 1.0s
 }
 
 #logo-hero:hover {
-    scale: 1.05;
-    filter: drop-shadow(0 0 30px rgba(255, 107, 0, .5)) drop-shadow(0 0 60px rgba(46, 204, 64, .2))
-}
-
-/* Texto — lado direito */
-.hero-text {
-    display: flex;
-    flex-direction: column;
-    align-items: flex-start
+    scale: 1.1;
+    filter: drop-shadow(0 0 30px rgba(255, 107, 0, .4)) drop-shadow(0 0 60px rgba(46, 204, 64, .2))
 }
 
 .hero-tagline {
@@ -261,7 +249,7 @@ nav {
 
 .hero-title {
     font-family: 'Bebas Neue', sans-serif;
-    font-size: clamp(2.6rem, 5vw, 5rem);
+    font-size: clamp(2.6rem, 6vw, 5.5rem);
     line-height: .95;
     margin-bottom: 16px;
     letter-spacing: 2px
@@ -271,10 +259,10 @@ nav {
 .hero-title .hl-g { color: var(--green) }
 
 .hero-sub {
-    font-size: clamp(.88rem, 1.5vw, 1.05rem);
+    font-size: clamp(.9rem, 1.8vw, 1.1rem);
     color: #ccc;
-    max-width: 480px;
-    margin: 0 0 28px;
+    max-width: 560px;
+    margin: 0 auto 28px;
     line-height: 1.7;
     font-weight: 300
 }
@@ -282,7 +270,13 @@ nav {
 .hero-btns {
     display: flex;
     gap: 14px;
+    justify-content: center;
     flex-wrap: wrap
+}
+
+/* Alias para compatibilidade com hero-text */
+.hero-text {
+    display: contents
 }
 
 .btn-primary {
@@ -345,32 +339,6 @@ nav {
 .vdot.active {
     background-color: #00000000;
     transform: scale(1.3)
-}
-
-/* Mobile: empilha logo em cima, texto embaixo */
-@media (max-width: 768px) {
-    .hero-content {
-        grid-template-columns: 1fr;
-        text-align: center;
-        gap: 20px;
-        padding: 90px 6% 20px
-    }
-
-    .hero-text {
-        align-items: center
-    }
-
-    #logo-hero {
-        width: clamp(160px, 50vw, 240px)
-    }
-
-    .hero-title {
-        font-size: clamp(2.4rem, 10vw, 3.8rem)
-    }
-
-    .hero-sub {
-        margin: 0 auto 24px
-    }
 }
 
 .hero-scroll {
