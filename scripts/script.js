@@ -266,6 +266,19 @@ window.addEventListener('scroll',()=>{
   document.querySelector('nav').style.background=window.scrollY>50?'rgba(10,10,10,0.99)':'rgba(10,10,10,0.96)';
 });
 
+// ── CTA FLUTUANTE MULTI-CANAL — Issue #15 ──
+function toggleFloatMenu() {
+  document.getElementById('floatCta').classList.toggle('open');
+}
+
+// Fechar menu ao clicar fora
+document.addEventListener('click', function(e) {
+  var cta = document.getElementById('floatCta');
+  if (cta && cta.classList.contains('open') && !cta.contains(e.target)) {
+    cta.classList.remove('open');
+  }
+});
+
 // ── FAQ ──
 function toggleFaq(el){
   const a=el.nextElementSibling,t=el.querySelector('.faq-toggle'),open=a.classList.contains('open');
