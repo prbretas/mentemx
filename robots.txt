@@ -1,0 +1,12 @@
+# Robots.txt — Mente MX
+User-agent: *
+Allow: /
+
+# Sitemap
+Sitemap: https://mentemx.com.br/sitemap.xml
+
+# Bloquear pastas desnecessárias para indexação
+Disallow: /.github/
+Disallow: /.kiro/
+Disallow: /.vscode/
+Disallow: /fonts/
