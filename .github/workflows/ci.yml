@@ -1,0 +1,135 @@
+name: CI — Validação de Código
+
+on:
+  push:
+    branches: ["main", "feature/**", "fix/**", "docs/**", "style/**"]
+  pull_request:
+    branches: ["main"]
+
+jobs:
+  validate:
+    name: HTML + CSS + JS Validation
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+
+    steps:
+      - name: Checkout do código
+        uses: actions/checkout@v4
+
+      - name: Configurar Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: "20"
+
+      - name: Instalar ferramentas de validação
+        run: |
+          npm install -g htmlhint stylelint stylelint-config-standard eslint
+
+      - name: Validar HTML
+        run: |
+          echo "Validando arquivos HTML..."
+          npx htmlhint "*.html" --config <(echo '{
+            "tagname-lowercase": true,
+            "attr-lowercase": true,
+            "attr-value-double-quotes": true,
+            "doctype-first": true,
+            "tag-pair": true,
+            "spec-char-escape": false,
+            "id-unique": true,
+            "src-not-empty": true,
+            "attr-no-duplication": true
+          }')
+
+      - name: Validar CSS customizado
+        run: |
+          echo "Validando CSS customizado..."
+          npx stylelint "styles/**/*.css" "css/style.css" --config <(echo '{
+            "extends": "stylelint-config-standard",
+            "rules": {
+              "no-empty-source": null,
+              "font-family-no-missing-generic-family-keyword": null,
+              "selector-class-pattern": null,
+              "selector-id-pattern": null,
+              "custom-property-pattern": null,
+              "declaration-block-no-redundant-longhand-properties": null,
+              "shorthand-property-no-redundant-values": null,
+              "alpha-value-notation": null,
+              "color-function-notation": null,
+              "value-keyword-case": null
+            }
+          }') || true
+
+      - name: Validar JavaScript
+        run: |
+          echo "Validando JavaScript..."
+          npx eslint "scripts/**/*.js" --config <(echo '{
+            "env": { "browser": true, "es2021": true },
+            "parserOptions": { "ecmaVersion": "latest" },
+            "rules": {
+              "no-undef": "warn",
+              "no-unused-vars": "warn",
+              "no-console": "off",
+              "semi": "off",
+              "no-redeclare": "error"
+            }
+          }') || true
+
+      - name: Verificar links internos
+        run: |
+          echo "Verificando referências de arquivos..."
+          # Verifica se CNAME existe
+          if [ ! -f "CNAME" ]; then
+            echo "⚠️ CNAME não encontrado!"
+            exit 1
+          fi
+          echo "✅ CNAME presente: $(cat CNAME)"
+
+      - name: Resumo do resultado
+        if: always()
+        run: |
+          echo "## Resultado do CI — Mente MX" >> $GITHUB_STEP_SUMMARY
+          echo "- HTML: htmlhint" >> $GITHUB_STEP_SUMMARY
+          echo "- CSS: stylelint" >> $GITHUB_STEP_SUMMARY
+          echo "- JS: eslint" >> $GITHUB_STEP_SUMMARY
+          echo "- Domínio: mentemx.com.br" >> $GITHUB_STEP_SUMMARY
+
+  e2e-tests:
+    name: Testes E2E (Playwright)
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+
+    steps:
+      - name: Checkout do código
+        uses: actions/checkout@v4
+
+      - name: Configurar Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: "20"
+
+      - name: Instalar dependências
+        run: npm install
+
+      - name: Instalar Playwright browsers
+        run: npx playwright install --with-deps chromium
+
+      - name: Instalar servidor local
+        run: npm install -g serve
+
+      - name: Rodar testes E2E
+        run: npx playwright test --project=desktop
+
+      - name: Upload relatório de falhas
+        if: failure()
+        uses: actions/upload-artifact@v4
+        with:
+          name: playwright-report
+          path: test-results/
+          retention-days: 7
+
+      - name: Resumo dos testes
+        if: always()
+        run: |
+          echo "## Testes E2E — Playwright" >> $GITHUB_STEP_SUMMARY
+          echo "- Projeto: desktop (Chrome)" >> $GITHUB_STEP_SUMMARY
+          echo "- Screenshots de falha disponíveis nos artifacts" >> $GITHUB_STEP_SUMMARY

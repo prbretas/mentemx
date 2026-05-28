@@ -1,0 +1,44 @@
+name: PR — Validação de Título e Branch
+
+on:
+  pull_request:
+    branches: ["main"]
+    types: [opened, edited, synchronize, reopened]
+
+jobs:
+  validate-pr:
+    name: Validar PR
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Validar título do PR (Conventional Commits)
+        uses: amannn/action-semantic-pull-request@v5
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        with:
+          types: |
+            feat
+            fix
+            docs
+            style
+            refactor
+            perf
+            chore
+            ci
+            content
+          requireScope: false
+          subjectPattern: ^.{1,72}$
+          subjectPatternError: |
+            O título do PR deve ter no máximo 72 caracteres.
+
+      - name: Validar nome da branch
+        run: |
+          BRANCH="${{ github.head_ref }}"
+          echo "Branch: $BRANCH"
+          if echo "$BRANCH" | grep -qE '^(feature|fix|docs|style|chore|refactor|perf|content|ci)/.+'; then
+            echo "✅ Nome de branch válido: $BRANCH"
+          else
+            echo "❌ Nome de branch inválido: $BRANCH"
+            echo "Use o padrão: feature/nome, fix/nome, style/nome, docs/nome, content/nome, etc."
+            exit 1
+          fi

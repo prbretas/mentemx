@@ -1,0 +1,50 @@
+name: Kanban — Mover Issue para Done ao Merge
+
+on:
+  pull_request:
+    branches: ["main"]
+    types: [closed]
+
+jobs:
+  move-to-done:
+    name: Mover para Done
+    if: github.event.pull_request.merged == true
+    runs-on: ubuntu-latest
+    permissions:
+      issues: write
+      repository-projects: write
+
+    steps:
+      - name: Mover issue vinculada para Done no Project
+        uses: actions/github-script@v7
+        with:
+          github-token: ${{ secrets.GITHUB_TOKEN }}
+          script: |
+            const prBody = context.payload.pull_request.body || '';
+            
+            // Extrair numeros de issues referenciadas (Closes #N, Fixes #N, Resolves #N)
+            const issuePattern = /(?:closes|fixes|resolves)\s+#(\d+)/gi;
+            const matches = [...prBody.matchAll(issuePattern)];
+            
+            if (matches.length === 0) {
+              console.log('Nenhuma issue vinculada encontrada no body do PR.');
+              return;
+            }
+            
+            for (const match of matches) {
+              const issueNumber = parseInt(match[1]);
+              console.log(`Fechando issue #${issueNumber}...`);
+              
+              // Fechar a issue (GitHub Projects move automaticamente issues fechadas para Done se configurado)
+              try {
+                await github.rest.issues.update({
+                  owner: context.repo.owner,
+                  repo: context.repo.repo,
+                  issue_number: issueNumber,
+                  state: 'closed'
+                });
+                console.log(`Issue #${issueNumber} fechada com sucesso.`);
+              } catch (e) {
+                console.log(`Erro ao fechar issue #${issueNumber}: ${e.message}`);
+              }
+            }
