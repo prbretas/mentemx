@@ -1517,33 +1517,99 @@ footer {
     color: var(--orange)
 }
 
-/* WA FLOAT */
-.wa-float {
+/* CTA FLUTUANTE MULTI-CANAL */
+.float-cta {
     position: fixed;
     bottom: 26px;
     right: 26px;
-    z-index: 999;
+    z-index: 999
+}
+
+.float-btn {
     width: 56px;
     height: 56px;
     background: #25d366;
     border-radius: 50%;
+    border: none;
     display: flex;
     align-items: center;
     justify-content: center;
-    text-decoration: none;
+    cursor: pointer;
     box-shadow: 0 4px 20px rgba(37, 211, 102, .35);
     transition: .3s;
-    animation: pwa 2.2s infinite
+    animation: pwa 2.2s infinite;
+    color: #fff
 }
 
-.wa-float:hover {
+.float-btn:hover {
     transform: scale(1.1)
 }
 
-.wa-float svg {
-    width: 28px;
-    height: 28px;
-    fill: #fff
+.float-icon-close {
+    display: none
+}
+
+.float-cta.open .float-icon-open {
+    display: none
+}
+
+.float-cta.open .float-icon-close {
+    display: block
+}
+
+.float-cta.open .float-btn {
+    background: var(--orange);
+    animation: none;
+    box-shadow: 0 4px 20px rgba(255, 107, 0, .35)
+}
+
+.float-menu {
+    position: absolute;
+    bottom: 68px;
+    right: 6px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+    opacity: 0;
+    transform: translateY(10px) scale(0.8);
+    pointer-events: none;
+    transition: opacity .3s ease, transform .3s ease
+}
+
+.float-cta.open .float-menu {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+    pointer-events: all
+}
+
+.float-option {
+    width: 44px;
+    height: 44px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #fff;
+    text-decoration: none;
+    transition: .3s;
+    box-shadow: 0 2px 12px rgba(0, 0, 0, .3)
+}
+
+.float-option:hover {
+    transform: scale(1.15)
+}
+
+.float-whatsapp {
+    background: #25d366
+}
+
+.float-insta {
+    background: linear-gradient(45deg, #f09433, #e6683c, #dc2743, #cc2366, #bc1888)
+}
+
+.float-email {
+    background: var(--orange)
 }
 
 @keyframes pwa {
