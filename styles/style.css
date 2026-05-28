@@ -1439,10 +1439,14 @@ section {
 
 #logo-phone{
     width: 100px;
+    height: auto;
+    object-fit: contain
 }
 
 #logo-footer{
     width: 150px;
+    height: auto;
+    object-fit: contain
 }
 
 /* FOOTER */
