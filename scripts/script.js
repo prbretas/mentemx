@@ -284,7 +284,8 @@ function toggleFaq(el){
   const a=el.nextElementSibling,t=el.querySelector('.faq-toggle'),open=a.classList.contains('open');
   document.querySelectorAll('.faq-a').forEach(x=>x.classList.remove('open'));
   document.querySelectorAll('.faq-toggle').forEach(x=>x.textContent='+');
-  if(!open){a.classList.add('open');t.textContent='−'}
+  document.querySelectorAll('.faq-q').forEach(x=>x.setAttribute('aria-expanded','false'));
+  if(!open){a.classList.add('open');t.textContent='−';el.setAttribute('aria-expanded','true')}
 }
 
 // ── WAITLIST ──
