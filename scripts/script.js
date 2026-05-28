@@ -262,14 +262,17 @@ setVideo(0);
 
 // ── NAV ──
 function toggleMenu(){document.getElementById('mobileMenu').classList.toggle('open')}
-window.addEventListener('scroll',()=>{
+function updateNavBg() {
   var isLight = document.documentElement.getAttribute('data-theme') === 'light';
   if (isLight) {
     document.querySelector('nav').style.background=window.scrollY>50?'rgba(245,245,245,0.99)':'rgba(245,245,245,0.96)';
   } else {
     document.querySelector('nav').style.background=window.scrollY>50?'rgba(10,10,10,0.99)':'rgba(10,10,10,0.96)';
   }
-});
+}
+window.addEventListener('scroll', updateNavBg);
+// Setar nav bg correto ao carregar
+updateNavBg();
 
 // ── DARK/LIGHT MODE — Issue #16 ──
 function toggleTheme() {
@@ -280,21 +283,18 @@ function toggleTheme() {
     html.removeAttribute('data-theme');
     btn.textContent = '🌙';
     localStorage.setItem('mentemx_theme', 'dark');
-    document.querySelector('nav').style.background = 'rgba(10,10,10,0.96)';
   } else {
     html.setAttribute('data-theme', 'light');
     btn.textContent = '☀️';
     localStorage.setItem('mentemx_theme', 'light');
-    document.querySelector('nav').style.background = 'rgba(245,245,245,0.96)';
   }
+  updateNavBg();
 }
 
-// Carregar tema salvo
+// Carregar tema salvo (botão e nav)
 (function() {
-  var saved = localStorage.getItem('mentemx_theme');
-  var prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
-  if (saved === 'light' || (!saved && !prefersDark)) {
-    document.documentElement.setAttribute('data-theme', 'light');
+  var isLight = document.documentElement.getAttribute('data-theme') === 'light';
+  if (isLight) {
     var btn = document.getElementById('themeToggle');
     if (btn) btn.textContent = '☀️';
   }

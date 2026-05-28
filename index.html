@@ -53,6 +53,14 @@ https://prbretas.github.io/mentemx/
   <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Inter:wght@300;400;600;700;900&display=swap"
     rel="stylesheet" />
   <script defer src="./scripts/script.js"></script>
+  <!-- Aplicar tema salvo ANTES do render para evitar flash -->
+  <script>
+    (function(){
+      var s=localStorage.getItem('mentemx_theme');
+      var p=window.matchMedia('(prefers-color-scheme:dark)').matches;
+      if(s==='light'||(!s&&!p)){document.documentElement.setAttribute('data-theme','light')}
+    })();
+  </script>
   <link rel="stylesheet" href="./styles/style.css" />
 </head>
 
