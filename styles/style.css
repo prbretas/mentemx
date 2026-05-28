@@ -1407,6 +1407,128 @@ section {
     background: var(--black)
 }
 
+.fg select {
+    accent-color: var(--orange)
+}
+
+.fg select option:checked,
+.fg select option:hover {
+    background: var(--orange);
+    color: #fff
+}
+
+/* Custom Select Dropdown */
+.custom-select {
+    position: relative;
+    width: 100%
+}
+
+.custom-select-trigger {
+    width: 100%;
+    background: var(--black);
+    border: 1px solid #2a2a2a;
+    border-radius: 6px;
+    padding: 12px 15px;
+    color: #fff;
+    font-size: .88rem;
+    cursor: pointer;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    transition: .3s;
+    font-family: 'Inter', sans-serif
+}
+
+.custom-select-trigger:hover {
+    border-color: var(--orange)
+}
+
+.custom-select.open .custom-select-trigger {
+    border-color: var(--orange)
+}
+
+.custom-select-arrow {
+    font-size: 1.2rem;
+    transition: .3s
+}
+
+.custom-select.open .custom-select-arrow {
+    transform: rotate(180deg)
+}
+
+.custom-select-options {
+    position: absolute;
+    top: calc(100% + 4px);
+    left: 0;
+    right: 0;
+    background: var(--black);
+    border: 1px solid #2a2a2a;
+    border-radius: 6px;
+    overflow: hidden;
+    z-index: 100;
+    opacity: 0;
+    transform: translateY(-8px);
+    pointer-events: none;
+    transition: opacity .2s ease, transform .2s ease
+}
+
+.custom-select.open .custom-select-options {
+    opacity: 1;
+    transform: translateY(0);
+    pointer-events: all
+}
+
+.custom-select-option {
+    padding: 11px 15px;
+    font-size: .86rem;
+    color: #ccc;
+    cursor: pointer;
+    transition: .2s
+}
+
+.custom-select-option:hover {
+    background: var(--orange);
+    color: #fff
+}
+
+.custom-select-option.selected {
+    background: rgba(255, 107, 0, .15);
+    color: var(--orange);
+    font-weight: 600
+}
+
+/* Light mode custom select */
+[data-theme="light"] .custom-select-trigger {
+    background: #f9f9f9;
+    border-color: #ccc;
+    color: #1a1a1a
+}
+
+[data-theme="light"] .custom-select-options {
+    background: #fff;
+    border-color: #ddd
+}
+
+[data-theme="light"] .custom-select-option {
+    color: #333
+}
+
+[data-theme="light"] .custom-select-option:hover {
+    background: var(--orange);
+    color: #fff
+}
+
+[data-theme="light"] .custom-select-option.selected {
+    background: rgba(255, 107, 0, .1);
+    color: var(--orange)
+}
+
+/* Selection highlight global */
+::selection {
+    background: var(--orange);
+    color: #fff
+}
+
 .fg textarea {
     resize: vertical;
     min-height: 95px
@@ -2710,6 +2832,290 @@ footer {
         flex: 0 0 calc(90vw - 32px);
         min-width: calc(90vw - 32px)
     }
+}
+
+/* ══════════════════════════════════════════════════════
+   DARK/LIGHT MODE — Issue #16
+   ══════════════════════════════════════════════════════ */
+
+.theme-toggle {
+    background: none;
+    border: 1px solid #333;
+    border-radius: 50%;
+    width: 36px;
+    height: 36px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    font-size: 1.1rem;
+    transition: .3s;
+    margin-left: 8px
+}
+
+.theme-toggle:hover {
+    border-color: var(--orange);
+    transform: scale(1.1)
+}
+
+/* Light mode overrides */
+[data-theme="light"] {
+    --black: #f5f5f5;
+    --dark: #eaeaea;
+    --gray: #e0e0e0;
+    --light: #0a0a0a
+}
+
+[data-theme="light"] body {
+    background: #f5f5f5;
+    color: #1a1a1a
+}
+
+[data-theme="light"] nav {
+    background: rgba(245, 245, 245, 0.96);
+    border-bottom-color: var(--orange)
+}
+
+[data-theme="light"] .nav-links a {
+    color: #444
+}
+
+[data-theme="light"] .nav-links a:hover {
+    color: var(--orange)
+}
+
+[data-theme="light"] .hamburger span {
+    background: #1a1a1a
+}
+
+[data-theme="light"] .mobile-menu {
+    background: rgba(245, 245, 245, .99)
+}
+
+[data-theme="light"] .mobile-menu a {
+    color: #333;
+    border-bottom-color: #ddd
+}
+
+/* Hero: manter textos BRANCOS (fundo é vídeo escuro) */
+[data-theme="light"] .hero-content h1 {
+    color: #fff
+}
+
+[data-theme="light"] .hero-sub {
+    color: #ddd
+}
+
+[data-theme="light"] .hero-tagline {
+    color: var(--orange)
+}
+
+/* Seções com fundo claro: títulos escuros */
+[data-theme="light"] .section-title {
+    color: #1a1a1a
+}
+
+[data-theme="light"] .about-content p,
+[data-theme="light"] .section-sub {
+    color: #555
+}
+
+[data-theme="light"] #sobre,
+[data-theme="light"] #depoimentos,
+[data-theme="light"] #contato {
+    background: #eaeaea
+}
+
+/* Seção App: manter fundo escuro (é um gradiente especial) */
+[data-theme="light"] #app {
+    background: linear-gradient(135deg, #050f05 0%, #0d0d00 50%, #150800 100%)
+}
+
+[data-theme="light"] #app .app-title,
+[data-theme="light"] #app .waitlist-box h3 {
+    color: #fff
+}
+
+[data-theme="light"] #app .app-desc,
+[data-theme="light"] #app .af-text {
+    color: #ccc
+}
+
+[data-theme="light"] #app .waitlist-box p {
+    color: #aaa
+}
+
+[data-theme="light"] #app .waitlist-box {
+    background: rgba(255, 255, 255, .04);
+    border-color: #2a2a2a
+}
+
+[data-theme="light"] #app .wl-form input {
+    background: #1a1a1a;
+    border-color: #333;
+    color: #fff
+}
+
+/* Cards */
+[data-theme="light"] .champ-card,
+[data-theme="light"] .serv-card,
+[data-theme="light"] .sport-card,
+[data-theme="light"] .test-card,
+[data-theme="light"] .c-form {
+    background: #fff;
+    border-color: #ddd
+}
+
+/* FAQ: fundo branco com texto escuro */
+[data-theme="light"] .faq-item {
+    background: #fff;
+    border-color: #ddd
+}
+
+[data-theme="light"] .faq-q {
+    background: #fff
+}
+
+[data-theme="light"] .faq-q:hover {
+    background: #f8f8f8
+}
+
+[data-theme="light"] .faq-q h4 {
+    color: #1a1a1a
+}
+
+[data-theme="light"] .faq-a {
+    background: #fff
+}
+
+[data-theme="light"] .faq-a p {
+    color: #444
+}
+
+[data-theme="light"] .champ-info p,
+[data-theme="light"] .serv-card > p,
+[data-theme="light"] .sport-card p,
+[data-theme="light"] .test-card p {
+    color: #555
+}
+
+[data-theme="light"] .champ-info h3,
+[data-theme="light"] .serv-card h3,
+[data-theme="light"] .sport-card h3 {
+    color: #1a1a1a
+}
+
+[data-theme="light"] .serv-list li {
+    color: #444;
+    border-bottom-color: #eee
+}
+
+/* Formulários */
+[data-theme="light"] .fg input,
+[data-theme="light"] .fg select,
+[data-theme="light"] .fg textarea {
+    background: #f9f9f9;
+    border-color: #ccc;
+    color: #1a1a1a
+}
+
+[data-theme="light"] .fg label {
+    color: #555
+}
+
+[data-theme="light"] .c-form > p {
+    color: #666
+}
+
+/* Contato info */
+[data-theme="light"] .contact-info p {
+    color: #444
+}
+
+[data-theme="light"] .c-text a,
+[data-theme="light"] .c-text p {
+    color: #1a1a1a
+}
+
+[data-theme="light"] .c-text span {
+    color: #666
+}
+
+[data-theme="light"] .soc-btn {
+    background: #f5f5f5;
+    border-color: #ddd;
+    color: #444
+}
+
+[data-theme="light"] .soc-btn:hover {
+    background: var(--orange);
+    border-color: var(--orange);
+    color: #fff
+}
+
+[data-theme="light"] .soc-btn:hover svg {
+    fill: #fff
+}
+
+/* FAQ hover no light mode */
+[data-theme="light"] .faq-item:hover {
+    border-color: var(--orange);
+    box-shadow: 0 2px 12px rgba(255, 107, 0, .08)
+}
+
+[data-theme="light"] .faq-q:hover {
+    background: #fef6f0
+}
+
+/* Cards hover no light mode */
+[data-theme="light"] .champ-card:hover,
+[data-theme="light"] .serv-card:hover,
+[data-theme="light"] .sport-card:hover,
+[data-theme="light"] .test-card:hover {
+    border-color: var(--orange);
+    box-shadow: 0 6px 24px rgba(255, 107, 0, .1)
+}
+
+/* Nav links hover */
+[data-theme="light"] .nav-cta {
+    background: var(--orange);
+    color: #fff
+}
+
+/* Footer links hover */
+[data-theme="light"] .footer-col ul a:hover {
+    color: var(--orange)
+}
+
+/* Stats: manter fundo laranja (não precisa mudar) */
+
+/* Footer */
+[data-theme="light"] footer {
+    background: #e0e0e0;
+    border-top-color: #ccc
+}
+
+[data-theme="light"] .footer-brand p,
+[data-theme="light"] .footer-col ul a {
+    color: #555
+}
+
+[data-theme="light"] .footer-col h4 {
+    color: #333
+}
+
+[data-theme="light"] .footer-bottom p {
+    color: #777
+}
+
+[data-theme="light"] .theme-toggle {
+    border-color: #ccc
+}
+
+/* Waitlist fora do app (se existir) */
+[data-theme="light"] .waitlist-box {
+    background: rgba(0, 0, 0, .03);
+    border-color: #ddd
 }
 
 /* ══════════════════════════════════════════════════════
