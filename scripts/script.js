@@ -125,7 +125,53 @@ function _reorderProductCards() {
 // Inicializa o Firebase quando a página carrega
 window.addEventListener('DOMContentLoaded', function() {
   _initFirebase();
+  _initScrollReveal();
 });
+
+// ── SCROLL REVEAL — Issue #12 ──
+function _initScrollReveal() {
+  // Seleciona elementos que já têm a classe .reveal (adicionados no HTML)
+  // E adiciona .reveal em elementos dinâmicos (cards de campeões, serviços, etc.)
+  var selectors = [
+    '.champ-card',
+    '.serv-card',
+    '.sport-card',
+    '.test-card',
+    '.faq-item',
+    '.about-grid',
+    '.app-inner',
+    '.contact-grid'
+  ];
+
+  selectors.forEach(function(sel) {
+    document.querySelectorAll(sel).forEach(function(el, i) {
+      if (!el.classList.contains('reveal')) {
+        el.classList.add('reveal');
+        // Escalonar delays para cards em grid (max 4)
+        var delay = Math.min(i + 1, 4);
+        el.classList.add('reveal-delay-' + delay);
+      }
+    });
+  });
+
+  // Configurar Intersection Observer
+  var observer = new IntersectionObserver(function(entries) {
+    entries.forEach(function(entry) {
+      if (entry.isIntersecting) {
+        entry.target.classList.add('revealed');
+        observer.unobserve(entry.target); // Anima apenas uma vez
+      }
+    });
+  }, {
+    threshold: 0.15,
+    rootMargin: '0px 0px -40px 0px'
+  });
+
+  // Observar todos os elementos com classe .reveal
+  document.querySelectorAll('.reveal').forEach(function(el) {
+    observer.observe(el);
+  });
+}
 
 // ── VIDEO ROTATION ──
 const videos = [
