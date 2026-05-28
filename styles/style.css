@@ -1407,6 +1407,22 @@ section {
     background: var(--black)
 }
 
+.fg select {
+    accent-color: var(--orange)
+}
+
+.fg select option:checked,
+.fg select option:hover {
+    background: var(--orange);
+    color: #fff
+}
+
+/* Selection highlight global */
+::selection {
+    background: var(--orange);
+    color: #fff
+}
+
 .fg textarea {
     resize: vertical;
     min-height: 95px
