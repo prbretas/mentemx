@@ -569,7 +569,7 @@ section {
     position: relative
 }
 
-#img-champs{
+.img-champs{
     width: 250px;
     position: top;    
 }
@@ -2884,7 +2884,7 @@ footer {
         height: 180px
     }
 
-    #img-champs {
+    .img-champs {
         width: 200px
     }
 
