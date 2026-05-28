@@ -2925,6 +2925,46 @@ footer {
     color: #444
 }
 
+[data-theme="light"] .soc-btn:hover {
+    background: var(--orange);
+    border-color: var(--orange);
+    color: #fff
+}
+
+[data-theme="light"] .soc-btn:hover svg {
+    fill: #fff
+}
+
+/* FAQ hover no light mode */
+[data-theme="light"] .faq-item:hover {
+    border-color: var(--orange);
+    box-shadow: 0 2px 12px rgba(255, 107, 0, .08)
+}
+
+[data-theme="light"] .faq-q:hover {
+    background: #fef6f0
+}
+
+/* Cards hover no light mode */
+[data-theme="light"] .champ-card:hover,
+[data-theme="light"] .serv-card:hover,
+[data-theme="light"] .sport-card:hover,
+[data-theme="light"] .test-card:hover {
+    border-color: var(--orange);
+    box-shadow: 0 6px 24px rgba(255, 107, 0, .1)
+}
+
+/* Nav links hover */
+[data-theme="light"] .nav-cta {
+    background: var(--orange);
+    color: #fff
+}
+
+/* Footer links hover */
+[data-theme="light"] .footer-col ul a:hover {
+    color: var(--orange)
+}
+
 /* Stats: manter fundo laranja (não precisa mudar) */
 
 /* Footer */
