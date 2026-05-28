@@ -1417,6 +1417,112 @@ section {
     color: #fff
 }
 
+/* Custom Select Dropdown */
+.custom-select {
+    position: relative;
+    width: 100%
+}
+
+.custom-select-trigger {
+    width: 100%;
+    background: var(--black);
+    border: 1px solid #2a2a2a;
+    border-radius: 6px;
+    padding: 12px 15px;
+    color: #fff;
+    font-size: .88rem;
+    cursor: pointer;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    transition: .3s;
+    font-family: 'Inter', sans-serif
+}
+
+.custom-select-trigger:hover {
+    border-color: var(--orange)
+}
+
+.custom-select.open .custom-select-trigger {
+    border-color: var(--orange)
+}
+
+.custom-select-arrow {
+    font-size: 1.2rem;
+    transition: .3s
+}
+
+.custom-select.open .custom-select-arrow {
+    transform: rotate(180deg)
+}
+
+.custom-select-options {
+    position: absolute;
+    top: calc(100% + 4px);
+    left: 0;
+    right: 0;
+    background: var(--black);
+    border: 1px solid #2a2a2a;
+    border-radius: 6px;
+    overflow: hidden;
+    z-index: 100;
+    opacity: 0;
+    transform: translateY(-8px);
+    pointer-events: none;
+    transition: opacity .2s ease, transform .2s ease
+}
+
+.custom-select.open .custom-select-options {
+    opacity: 1;
+    transform: translateY(0);
+    pointer-events: all
+}
+
+.custom-select-option {
+    padding: 11px 15px;
+    font-size: .86rem;
+    color: #ccc;
+    cursor: pointer;
+    transition: .2s
+}
+
+.custom-select-option:hover {
+    background: var(--orange);
+    color: #fff
+}
+
+.custom-select-option.selected {
+    background: rgba(255, 107, 0, .15);
+    color: var(--orange);
+    font-weight: 600
+}
+
+/* Light mode custom select */
+[data-theme="light"] .custom-select-trigger {
+    background: #f9f9f9;
+    border-color: #ccc;
+    color: #1a1a1a
+}
+
+[data-theme="light"] .custom-select-options {
+    background: #fff;
+    border-color: #ddd
+}
+
+[data-theme="light"] .custom-select-option {
+    color: #333
+}
+
+[data-theme="light"] .custom-select-option:hover {
+    background: var(--orange);
+    color: #fff
+}
+
+[data-theme="light"] .custom-select-option.selected {
+    background: rgba(255, 107, 0, .1);
+    color: var(--orange)
+}
+
 /* Selection highlight global */
 ::selection {
     background: var(--orange);

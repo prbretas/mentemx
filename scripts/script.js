@@ -339,6 +339,36 @@ function sendContact(){
   document.getElementById('c-ok').style.display='block';
 }
 
+// ── CUSTOM SELECT — Dropdown customizado ──
+function toggleCustomSelect() {
+  document.getElementById('customSelectWrap').classList.toggle('open');
+}
+
+function selectCustomOption(el) {
+  var wrap = document.getElementById('customSelectWrap');
+  var value = el.getAttribute('data-value');
+  var text = el.textContent;
+
+  document.getElementById('customSelectValue').textContent = text;
+  document.getElementById('c-sport').value = value;
+
+  // Marcar como selecionado
+  wrap.querySelectorAll('.custom-select-option').forEach(function(opt) {
+    opt.classList.remove('selected');
+  });
+  el.classList.add('selected');
+
+  wrap.classList.remove('open');
+}
+
+// Fechar custom select ao clicar fora
+document.addEventListener('click', function(e) {
+  var wrap = document.getElementById('customSelectWrap');
+  if (wrap && !wrap.contains(e.target)) {
+    wrap.classList.remove('open');
+  }
+});
+
 // ── LOJA — CATÁLOGO ──
 // images: array de caminhos. O primeiro é exibido no card.
 // Para adicionar mais fotos de um produto, basta incluir no array images[].
