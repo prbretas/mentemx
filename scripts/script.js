@@ -266,6 +266,33 @@ window.addEventListener('scroll',()=>{
   document.querySelector('nav').style.background=window.scrollY>50?'rgba(10,10,10,0.99)':'rgba(10,10,10,0.96)';
 });
 
+// ── DARK/LIGHT MODE — Issue #16 ──
+function toggleTheme() {
+  var html = document.documentElement;
+  var btn = document.getElementById('themeToggle');
+  var current = html.getAttribute('data-theme');
+  if (current === 'light') {
+    html.removeAttribute('data-theme');
+    btn.textContent = '🌙';
+    localStorage.setItem('mentemx_theme', 'dark');
+  } else {
+    html.setAttribute('data-theme', 'light');
+    btn.textContent = '☀️';
+    localStorage.setItem('mentemx_theme', 'light');
+  }
+}
+
+// Carregar tema salvo
+(function() {
+  var saved = localStorage.getItem('mentemx_theme');
+  var prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
+  if (saved === 'light' || (!saved && !prefersDark)) {
+    document.documentElement.setAttribute('data-theme', 'light');
+    var btn = document.getElementById('themeToggle');
+    if (btn) btn.textContent = '☀️';
+  }
+})();
+
 // ── CTA FLUTUANTE MULTI-CANAL — Issue #15 ──
 function toggleFloatMenu() {
   document.getElementById('floatCta').classList.toggle('open');

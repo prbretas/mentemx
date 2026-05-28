@@ -2713,6 +2713,148 @@ footer {
 }
 
 /* ══════════════════════════════════════════════════════
+   DARK/LIGHT MODE — Issue #16
+   ══════════════════════════════════════════════════════ */
+
+.theme-toggle {
+    background: none;
+    border: 1px solid #333;
+    border-radius: 50%;
+    width: 36px;
+    height: 36px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    font-size: 1.1rem;
+    transition: .3s;
+    margin-left: 8px
+}
+
+.theme-toggle:hover {
+    border-color: var(--orange);
+    transform: scale(1.1)
+}
+
+/* Light mode overrides */
+[data-theme="light"] {
+    --black: #f5f5f5;
+    --dark: #eaeaea;
+    --gray: #e0e0e0;
+    --light: #0a0a0a
+}
+
+[data-theme="light"] body {
+    background: #f5f5f5;
+    color: #1a1a1a
+}
+
+[data-theme="light"] nav {
+    background: rgba(245, 245, 245, 0.96);
+    border-bottom-color: var(--orange)
+}
+
+[data-theme="light"] .nav-links a {
+    color: #444
+}
+
+[data-theme="light"] .nav-links a:hover {
+    color: var(--orange)
+}
+
+[data-theme="light"] .hamburger span {
+    background: #1a1a1a
+}
+
+[data-theme="light"] .mobile-menu {
+    background: rgba(245, 245, 245, .99)
+}
+
+[data-theme="light"] .mobile-menu a {
+    color: #333;
+    border-bottom-color: #ddd
+}
+
+[data-theme="light"] .hero-content h1,
+[data-theme="light"] .section-title {
+    color: #1a1a1a
+}
+
+[data-theme="light"] .hero-sub,
+[data-theme="light"] .about-content p,
+[data-theme="light"] .section-sub {
+    color: #555
+}
+
+[data-theme="light"] #sobre,
+[data-theme="light"] #depoimentos,
+[data-theme="light"] #contato {
+    background: #eaeaea
+}
+
+[data-theme="light"] .champ-card,
+[data-theme="light"] .serv-card,
+[data-theme="light"] .sport-card,
+[data-theme="light"] .test-card,
+[data-theme="light"] .faq-item,
+[data-theme="light"] .c-form {
+    background: #fff;
+    border-color: #ddd
+}
+
+[data-theme="light"] .champ-info p,
+[data-theme="light"] .serv-card > p,
+[data-theme="light"] .sport-card p,
+[data-theme="light"] .test-card p,
+[data-theme="light"] .faq-a p {
+    color: #555
+}
+
+[data-theme="light"] .champ-info h3,
+[data-theme="light"] .serv-card h3,
+[data-theme="light"] .sport-card h3,
+[data-theme="light"] .faq-q h4 {
+    color: #1a1a1a
+}
+
+[data-theme="light"] .serv-list li {
+    color: #444;
+    border-bottom-color: #eee
+}
+
+[data-theme="light"] .fg input,
+[data-theme="light"] .fg select,
+[data-theme="light"] .fg textarea,
+[data-theme="light"] .wl-form input {
+    background: #f5f5f5;
+    border-color: #ddd;
+    color: #1a1a1a
+}
+
+[data-theme="light"] .waitlist-box {
+    background: rgba(0, 0, 0, .03);
+    border-color: #ddd
+}
+
+[data-theme="light"] footer {
+    background: #e0e0e0;
+    border-top-color: #ccc
+}
+
+[data-theme="light"] .footer-brand p,
+[data-theme="light"] .footer-col ul a {
+    color: #666
+}
+
+[data-theme="light"] .footer-bottom p {
+    color: #888
+}
+
+[data-theme="light"] .theme-toggle {
+    border-color: #ccc
+}
+
+/* ══════════════════════════════════════════════════════
    SCROLL REVEAL ANIMATIONS — Issue #12
    ══════════════════════════════════════════════════════ */
 
