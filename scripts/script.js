@@ -126,6 +126,7 @@ function _reorderProductCards() {
 window.addEventListener('DOMContentLoaded', function() {
   _initFirebase();
   _initScrollReveal();
+  _initCountUp();
 });
 
 // ── SCROLL REVEAL — Issue #12 ──
@@ -170,6 +171,60 @@ function _initScrollReveal() {
   // Observar todos os elementos com classe .reveal
   document.querySelectorAll('.reveal').forEach(function(el) {
     observer.observe(el);
+  });
+}
+
+// ── COUNT-UP ANIMATION — Issue #13 ──
+function _initCountUp() {
+  var counters = document.querySelectorAll('.count-up');
+  if (!counters.length) return;
+
+  var hasAnimated = false;
+
+  var observer = new IntersectionObserver(function(entries) {
+    entries.forEach(function(entry) {
+      if (entry.isIntersecting && !hasAnimated) {
+        hasAnimated = true;
+        _animateCounters(counters);
+        observer.unobserve(entry.target);
+      }
+    });
+  }, { threshold: 0.3 });
+
+  var statsSection = document.getElementById('stats');
+  if (statsSection) observer.observe(statsSection);
+}
+
+function _animateCounters(counters) {
+  var duration = 2000;
+
+  counters.forEach(function(counter) {
+    var target = parseInt(counter.getAttribute('data-target')) || 0;
+    var prefix = counter.getAttribute('data-prefix') || '';
+    var suffix = target >= 1000 ? 'K' : '';
+    var displayTarget = target >= 1000 ? Math.floor(target / 1000) : target;
+    var startTime = null;
+
+    function easeOutQuart(t) {
+      return 1 - Math.pow(1 - t, 4);
+    }
+
+    function animate(timestamp) {
+      if (!startTime) startTime = timestamp;
+      var progress = Math.min((timestamp - startTime) / duration, 1);
+      var easedProgress = easeOutQuart(progress);
+      var current = Math.floor(easedProgress * displayTarget);
+
+      counter.textContent = prefix + current + suffix;
+
+      if (progress < 1) {
+        requestAnimationFrame(animate);
+      } else {
+        counter.textContent = prefix + displayTarget + suffix;
+      }
+    }
+
+    requestAnimationFrame(animate);
   });
 }
 
