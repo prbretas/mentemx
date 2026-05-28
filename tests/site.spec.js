@@ -137,20 +137,11 @@ test.describe('Contato', () => {
     await expect(page.locator('#c-msg')).toBeAttached();
   });
 
-  test('custom select de modalidade funciona', async ({ page }) => {
+  test('select de modalidade funciona', async ({ page }) => {
     await page.goto('/');
-    const trigger = page.locator('#customSelectTrigger');
-    const options = page.locator('#customSelectOptions');
-
-    // Clicar para abrir
-    await trigger.click();
-    const wrap = page.locator('#customSelectWrap');
-    await expect(wrap).toHaveClass(/open/);
-
-    // Selecionar opção
-    await page.locator('.custom-select-option[data-value="Motocross"]').click();
-    const hidden = page.locator('#c-sport');
-    expect(await hidden.inputValue()).toBe('Motocross');
+    const select = page.locator('#c-sport');
+    await select.selectOption('Motocross');
+    expect(await select.inputValue()).toBe('Motocross');
   });
 });
 
