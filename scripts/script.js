@@ -263,7 +263,12 @@ setVideo(0);
 // ── NAV ──
 function toggleMenu(){document.getElementById('mobileMenu').classList.toggle('open')}
 window.addEventListener('scroll',()=>{
-  document.querySelector('nav').style.background=window.scrollY>50?'rgba(10,10,10,0.99)':'rgba(10,10,10,0.96)';
+  var isLight = document.documentElement.getAttribute('data-theme') === 'light';
+  if (isLight) {
+    document.querySelector('nav').style.background=window.scrollY>50?'rgba(245,245,245,0.99)':'rgba(245,245,245,0.96)';
+  } else {
+    document.querySelector('nav').style.background=window.scrollY>50?'rgba(10,10,10,0.99)':'rgba(10,10,10,0.96)';
+  }
 });
 
 // ── DARK/LIGHT MODE — Issue #16 ──
@@ -275,10 +280,12 @@ function toggleTheme() {
     html.removeAttribute('data-theme');
     btn.textContent = '🌙';
     localStorage.setItem('mentemx_theme', 'dark');
+    document.querySelector('nav').style.background = 'rgba(10,10,10,0.96)';
   } else {
     html.setAttribute('data-theme', 'light');
     btn.textContent = '☀️';
     localStorage.setItem('mentemx_theme', 'light');
+    document.querySelector('nav').style.background = 'rgba(245,245,245,0.96)';
   }
 }
 
