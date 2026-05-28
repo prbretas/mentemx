@@ -1,0 +1,67 @@
+name: Task
+description: Tarefa de desenvolvimento ou manutenção do site
+title: "[TASK] "
+labels: ["enhancement"]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        ## Task — Mente MX
+        Descreva a tarefa a ser executada.
+
+  - type: textarea
+    id: description
+    attributes:
+      label: Descrição
+      description: O que precisa ser feito?
+      placeholder: "Ex: Otimizar todas as imagens da pasta img/produtos/ para formato WebP."
+    validations:
+      required: true
+
+  - type: dropdown
+    id: section
+    attributes:
+      label: Seção do Site Relacionada
+      options:
+        - Hero / Vídeo
+        - Navbar
+        - Sobre o Mentor
+        - Campeões
+        - Serviços / Planos
+        - Modalidades
+        - Depoimentos
+        - App Mente MX Pro
+        - Loja
+        - FAQ
+        - Contato
+        - Footer
+        - Performance / SEO
+        - CI/CD / Infraestrutura
+        - Geral
+    validations:
+      required: true
+
+  - type: textarea
+    id: subtasks
+    attributes:
+      label: Checklist de Subtarefas
+      description: Liste as subtarefas necessárias
+      placeholder: |
+        - [ ] Converter imagens PNG para WebP
+        - [ ] Adicionar fallback para navegadores sem suporte
+        - [ ] Atualizar referências no HTML
+        - [ ] Testar em mobile
+    validations:
+      required: true
+
+  - type: dropdown
+    id: priority
+    attributes:
+      label: Prioridade
+      options:
+        - Crítica
+        - Alta
+        - Média
+        - Baixa
+    validations:
+      required: true

@@ -1,0 +1,43 @@
+name: Issues — Auto Label por Branch
+
+on:
+  pull_request:
+    branches: ["main"]
+    types: [opened, synchronize]
+
+jobs:
+  auto-label:
+    name: Aplicar Labels Automáticos
+    runs-on: ubuntu-latest
+    permissions:
+      pull-requests: write
+
+    steps:
+      - name: Aplicar label por tipo de branch
+        uses: actions/github-script@v7
+        with:
+          script: |
+            const branch = context.payload.pull_request.head.ref;
+            const labelMap = {
+              'feature': 'enhancement',
+              'fix': 'bug',
+              'docs': 'documentation',
+              'style': 'design',
+              'chore': 'ci-cd',
+              'refactor': 'enhancement',
+              'perf': 'enhancement',
+              'content': 'content',
+            };
+            const prefix = branch.split('/')[0];
+            const label = labelMap[prefix];
+            if (label) {
+              await github.rest.issues.addLabels({
+                owner: context.repo.owner,
+                repo: context.repo.repo,
+                issue_number: context.payload.pull_request.number,
+                labels: [label],
+              });
+              console.log(`Label aplicado: ${label}`);
+            } else {
+              console.log(`Nenhum label mapeado para o prefixo: ${prefix}`);
+            }

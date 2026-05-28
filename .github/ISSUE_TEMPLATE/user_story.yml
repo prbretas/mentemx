@@ -1,0 +1,94 @@
+name: Feature Request
+description: Sugira uma nova funcionalidade ou melhoria para o site
+title: "[FEATURE] "
+labels: ["enhancement"]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        ## Feature Request — Mente MX
+        Descreva a funcionalidade desejada e como ela beneficia o usuário.
+
+  - type: textarea
+    id: description
+    attributes:
+      label: Descrição
+      description: O que você gostaria que fosse implementado?
+      placeholder: "Ex: Adicionar animações de entrada nas seções ao scrollar a página."
+    validations:
+      required: true
+
+  - type: textarea
+    id: motivation
+    attributes:
+      label: Motivação
+      description: Por que essa funcionalidade é importante?
+      placeholder: "Melhora a experiência visual e dá sensação de site premium, reforçando a marca."
+    validations:
+      required: true
+
+  - type: textarea
+    id: solution
+    attributes:
+      label: Solução Proposta
+      description: Como você imagina a implementação?
+      placeholder: |
+        - Usar Intersection Observer para detectar quando seções entram na viewport
+        - Aplicar fade-in + slide-up com duração de 400ms
+        - Aplicar nos cards de campeões, serviços e depoimentos
+    validations:
+      required: true
+
+  - type: textarea
+    id: acceptance
+    attributes:
+      label: Critérios de Aceite
+      description: Condições para considerar a feature concluída
+      placeholder: |
+        - [ ] Seções animam ao entrar na viewport
+        - [ ] Animação é suave (não trava em mobile)
+        - [ ] Funciona em Chrome, Firefox e Safari
+        - [ ] Não impacta performance (Lighthouse > 80)
+    validations:
+      required: true
+
+  - type: dropdown
+    id: priority
+    attributes:
+      label: Prioridade
+      options:
+        - Crítica
+        - Alta
+        - Média
+        - Baixa
+    validations:
+      required: true
+
+  - type: dropdown
+    id: section
+    attributes:
+      label: Seção do Site Afetada
+      description: Qual parte do site essa feature impacta?
+      options:
+        - Hero / Vídeo
+        - Navbar
+        - Sobre o Mentor
+        - Campeões
+        - Serviços / Planos
+        - Modalidades
+        - Depoimentos
+        - App Mente MX Pro
+        - Loja
+        - FAQ
+        - Contato
+        - Footer
+        - Geral (todo o site)
+    validations:
+      required: true
+
+  - type: textarea
+    id: notes
+    attributes:
+      label: Notas Adicionais
+      description: Referências, inspirações, links (opcional)
+      placeholder: "Referência: https://exemplo.com — gostei da animação de entrada deles."

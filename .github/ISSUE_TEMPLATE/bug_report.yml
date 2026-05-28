@@ -1,0 +1,64 @@
+name: Bug Report
+description: Reporte um comportamento inesperado no site
+title: "[BUG] "
+labels: ["bug"]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        ## Bug Report — Mente MX
+        Descreva o problema encontrado no site com o máximo de detalhes possível.
+
+  - type: textarea
+    id: description
+    attributes:
+      label: Descrição do Bug
+      description: O que aconteceu? O que era esperado?
+      placeholder: "Ex: O carrossel de produtos não funciona no Safari mobile. Os cards ficam sobrepostos."
+    validations:
+      required: true
+
+  - type: textarea
+    id: steps
+    attributes:
+      label: Passos para Reproduzir
+      placeholder: |
+        1. Acessar mentemx.com.br no Safari (iPhone)
+        2. Scrollar até a seção "Loja"
+        3. Tentar navegar entre os produtos
+        4. Observar que os cards ficam sobrepostos
+    validations:
+      required: true
+
+  - type: textarea
+    id: expected
+    attributes:
+      label: Comportamento Esperado
+      placeholder: "Os cards deveriam deslizar horizontalmente sem sobreposição."
+    validations:
+      required: true
+
+  - type: textarea
+    id: actual
+    attributes:
+      label: Comportamento Atual
+      placeholder: "Os cards ficam empilhados e não respondem ao swipe."
+    validations:
+      required: true
+
+  - type: textarea
+    id: environment
+    attributes:
+      label: Ambiente
+      placeholder: |
+        - Dispositivo: iPhone 14
+        - Navegador: Safari 17.2
+        - OS: iOS 17.2
+        - Resolução: 390x844
+
+  - type: textarea
+    id: screenshots
+    attributes:
+      label: Screenshots
+      description: Capturas de tela ou vídeo do bug (opcional)
+      placeholder: "Arraste imagens aqui ou cole links"

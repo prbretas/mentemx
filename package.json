@@ -1,0 +1,13 @@
+{
+  "name": "mentemx",
+  "version": "1.0.0",
+  "description": "Site institucional Mente MX - Testes E2E",
+  "scripts": {
+    "test": "npx playwright test",
+    "test:headed": "npx playwright test --headed",
+    "test:mobile": "npx playwright test --project=mobile"
+  },
+  "devDependencies": {
+    "@playwright/test": "^1.44.0"
+  }
+}

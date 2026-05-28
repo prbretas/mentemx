@@ -1,0 +1,18 @@
+# CODEOWNERS — define revisores obrigatórios por área do código
+# Documentação: https://docs.github.com/en/repositories/managing-your-repositorys-settings-and-features/customizing-your-repository/about-code-owners
+
+# Dono padrão para todos os arquivos
+* @prbretas
+
+# HTML principal
+index.html @prbretas
+
+# Estilos customizados
+styles/ @prbretas
+css/style.css @prbretas
+
+# JavaScript
+scripts/ @prbretas
+
+# CI/CD e configurações
+.github/ @prbretas
