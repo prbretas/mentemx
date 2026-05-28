@@ -598,7 +598,7 @@ function _renderRelated(currentId) {
     return '<div class="related-item" onclick="openModal(\'' + p.id + '\')" title="' + p.name + '">'
       + '<div class="related-img">'
       + (imgSrc
-          ? '<img src="' + imgSrc + '" alt="' + p.name + '" oncontextmenu="return false" ondragstart="return false">'
+          ? '<img src="' + imgSrc + '" alt="' + p.name + '" loading="lazy" oncontextmenu="return false" ondragstart="return false">'
           : '<span class="related-placeholder">' + p.name.charAt(0) + '</span>')
       + '</div>'
       + '<p class="related-name">' + p.name + '</p>'
