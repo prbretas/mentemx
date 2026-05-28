@@ -609,7 +609,7 @@ section {
 }
 
 .champ-info p {
-    color: #999;
+    color: #aaa;
     font-size: .83rem;
     line-height: 1.65
 }
@@ -698,7 +698,7 @@ section {
 }
 
 .serv-card>p {
-    color: #999;
+    color: #aaa;
     font-size: .85rem;
     line-height: 1.7;
     margin-bottom: 18px
@@ -1020,7 +1020,7 @@ section {
 }
 
 .waitlist-box p {
-    color: #999;
+    color: #aaa;
     font-size: .83rem;
     margin-bottom: 18px
 }
@@ -1252,7 +1252,7 @@ section {
 }
 
 .faq-a p {
-    color: #999;
+    color: #aaa;
     font-size: .86rem;
     line-height: 1.85
 }
@@ -1363,7 +1363,7 @@ section {
 }
 
 .c-form>p {
-    color: #999;
+    color: #aaa;
     font-size: .83rem;
     margin-bottom: 22px
 }

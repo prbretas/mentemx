@@ -59,7 +59,7 @@ https://prbretas.github.io/mentemx/
 
 <body>
   <!-- NAVBAR -->
-  <nav>
+  <nav aria-label="Navegação principal">
     <div class="nav-inner">
       <a href="#hero" class="logo-nav">
         <!-- Logo SVG inline representando a marca Mente MX -->
@@ -75,7 +75,7 @@ https://prbretas.github.io/mentemx/
         <li><a href="#contato">Contato</a></li>
       </ul>
       <a href="#servicos" class="nav-cta">Quero Mentoria</a>
-      <div class="hamburger" onclick="toggleMenu()">
+      <div class="hamburger" role="button" tabindex="0" aria-label="Abrir menu de navegação" onclick="toggleMenu()" onkeydown="if(event.key==='Enter'||event.key===' ')toggleMenu()">
         <span></span><span></span><span></span>
       </div>
     </div>
@@ -502,7 +502,7 @@ https://prbretas.github.io/mentemx/
     </div>
     <div class="faq-wrap">
       <div class="faq-item">
-        <div class="faq-q" onclick="toggleFaq(this)">
+        <div class="faq-q" role="button" tabindex="0" aria-expanded="false" onclick="toggleFaq(this)" onkeydown="if(event.key==='Enter'||event.key===' ')toggleFaq(this)">
           <h4>O Mente MX atende pilotos amadores?</h4>
           <div class="faq-toggle">+</div>
         </div>
@@ -516,7 +516,7 @@ https://prbretas.github.io/mentemx/
         </div>
       </div>
       <div class="faq-item">
-        <div class="faq-q" onclick="toggleFaq(this)">
+        <div class="faq-q" role="button" tabindex="0" aria-expanded="false" onclick="toggleFaq(this)" onkeydown="if(event.key==='Enter'||event.key===' ')toggleFaq(this)">
           <h4>As mentorias são presenciais ou online?</h4>
           <div class="faq-toggle">+</div>
         </div>
@@ -529,7 +529,7 @@ https://prbretas.github.io/mentemx/
         </div>
       </div>
       <div class="faq-item">
-        <div class="faq-q" onclick="toggleFaq(this)">
+        <div class="faq-q" role="button" tabindex="0" aria-expanded="false" onclick="toggleFaq(this)" onkeydown="if(event.key==='Enter'||event.key===' ')toggleFaq(this)">
           <h4>Em quanto tempo vejo resultados?</h4>
           <div class="faq-toggle">+</div>
         </div>
@@ -543,7 +543,7 @@ https://prbretas.github.io/mentemx/
         </div>
       </div>
       <div class="faq-item">
-        <div class="faq-q" onclick="toggleFaq(this)">
+        <div class="faq-q" role="button" tabindex="0" aria-expanded="false" onclick="toggleFaq(this)" onkeydown="if(event.key==='Enter'||event.key===' ')toggleFaq(this)">
           <h4>A mentoria atende apenas pilotos de motocross?</h4>
           <div class="faq-toggle">+</div>
         </div>
@@ -556,7 +556,7 @@ https://prbretas.github.io/mentemx/
         </div>
       </div>
       <div class="faq-item">
-        <div class="faq-q" onclick="toggleFaq(this)">
+        <div class="faq-q" role="button" tabindex="0" aria-expanded="false" onclick="toggleFaq(this)" onkeydown="if(event.key==='Enter'||event.key===' ')toggleFaq(this)">
           <h4>Como funciona o suporte entre as sessões?</h4>
           <div class="faq-toggle">+</div>
         </div>
@@ -569,7 +569,7 @@ https://prbretas.github.io/mentemx/
         </div>
       </div>
       <div class="faq-item">
-        <div class="faq-q" onclick="toggleFaq(this)">
+        <div class="faq-q" role="button" tabindex="0" aria-expanded="false" onclick="toggleFaq(this)" onkeydown="if(event.key==='Enter'||event.key===' ')toggleFaq(this)">
           <h4>O que é o Mente MX Pro e quando será lançado?</h4>
           <div class="faq-toggle">+</div>
         </div>
