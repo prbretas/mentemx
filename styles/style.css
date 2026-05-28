@@ -79,7 +79,7 @@ nav {
     text-decoration: none
 }
 
-#logo-nav  {
+#logo-nav {
     height: 60px;
     width: auto;
     object-fit: contain
@@ -1561,10 +1561,14 @@ section {
 
 #logo-phone{
     width: 100px;
+    height: auto;
+    object-fit: contain
 }
 
 #logo-footer{
     width: 150px;
+    height: auto;
+    object-fit: contain
 }
 
 /* FOOTER */
