@@ -75,6 +75,7 @@ https://prbretas.github.io/mentemx/
         <li><a href="#contato">Contato</a></li>
       </ul>
       <a href="#servicos" class="nav-cta">Quero Mentoria</a>
+      <button class="theme-toggle" id="themeToggle" aria-label="Alternar tema claro/escuro" onclick="toggleTheme()">🌙</button>
       <div class="hamburger" role="button" tabindex="0" aria-label="Abrir menu de navegação" onclick="toggleMenu()" onkeydown="if(event.key==='Enter'||event.key===' ')toggleMenu()">
         <span></span><span></span><span></span>
       </div>
@@ -654,14 +655,21 @@ https://prbretas.github.io/mentemx/
         </div>
         <div class="fg">
           <label>Modalidade</label>
-          <select id="c-sport">
-            <option value="">Selecione sua modalidade</option>
-            <option>Motocross</option>
-            <option>Rally</option>
-            <option>Enduro</option>
-            <option>Supercross</option>
-            <option>Outro</option>
-          </select>
+          <div class="custom-select" id="customSelectWrap">
+            <div class="custom-select-trigger" id="customSelectTrigger" onclick="toggleCustomSelect()">
+              <span id="customSelectValue">Selecione sua modalidade</span>
+              <span class="custom-select-arrow">&#8964;</span>
+            </div>
+            <div class="custom-select-options" id="customSelectOptions">
+              <div class="custom-select-option" data-value="" onclick="selectCustomOption(this)">Selecione sua modalidade</div>
+              <div class="custom-select-option" data-value="Motocross" onclick="selectCustomOption(this)">Motocross</div>
+              <div class="custom-select-option" data-value="Rally" onclick="selectCustomOption(this)">Rally</div>
+              <div class="custom-select-option" data-value="Enduro" onclick="selectCustomOption(this)">Enduro</div>
+              <div class="custom-select-option" data-value="Supercross" onclick="selectCustomOption(this)">Supercross</div>
+              <div class="custom-select-option" data-value="Outro" onclick="selectCustomOption(this)">Outro</div>
+            </div>
+            <input type="hidden" id="c-sport" value="" />
+          </div>
         </div>
         <div class="fg">
           <label>Mensagem</label><textarea id="c-msg" placeholder="Conte sobre seus objetivos e desafios..."></textarea>

@@ -266,6 +266,33 @@ window.addEventListener('scroll',()=>{
   document.querySelector('nav').style.background=window.scrollY>50?'rgba(10,10,10,0.99)':'rgba(10,10,10,0.96)';
 });
 
+// ── DARK/LIGHT MODE — Issue #16 ──
+function toggleTheme() {
+  var html = document.documentElement;
+  var btn = document.getElementById('themeToggle');
+  var current = html.getAttribute('data-theme');
+  if (current === 'light') {
+    html.removeAttribute('data-theme');
+    btn.textContent = '🌙';
+    localStorage.setItem('mentemx_theme', 'dark');
+  } else {
+    html.setAttribute('data-theme', 'light');
+    btn.textContent = '☀️';
+    localStorage.setItem('mentemx_theme', 'light');
+  }
+}
+
+// Carregar tema salvo
+(function() {
+  var saved = localStorage.getItem('mentemx_theme');
+  var prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
+  if (saved === 'light' || (!saved && !prefersDark)) {
+    document.documentElement.setAttribute('data-theme', 'light');
+    var btn = document.getElementById('themeToggle');
+    if (btn) btn.textContent = '☀️';
+  }
+})();
+
 // ── CTA FLUTUANTE MULTI-CANAL — Issue #15 ──
 function toggleFloatMenu() {
   document.getElementById('floatCta').classList.toggle('open');
@@ -311,6 +338,36 @@ function sendContact(){
   window.open(`https://wa.me/5547992108650?text=${msg}`,'_blank');
   document.getElementById('c-ok').style.display='block';
 }
+
+// ── CUSTOM SELECT — Dropdown customizado ──
+function toggleCustomSelect() {
+  document.getElementById('customSelectWrap').classList.toggle('open');
+}
+
+function selectCustomOption(el) {
+  var wrap = document.getElementById('customSelectWrap');
+  var value = el.getAttribute('data-value');
+  var text = el.textContent;
+
+  document.getElementById('customSelectValue').textContent = text;
+  document.getElementById('c-sport').value = value;
+
+  // Marcar como selecionado
+  wrap.querySelectorAll('.custom-select-option').forEach(function(opt) {
+    opt.classList.remove('selected');
+  });
+  el.classList.add('selected');
+
+  wrap.classList.remove('open');
+}
+
+// Fechar custom select ao clicar fora
+document.addEventListener('click', function(e) {
+  var wrap = document.getElementById('customSelectWrap');
+  if (wrap && !wrap.contains(e.target)) {
+    wrap.classList.remove('open');
+  }
+});
 
 // ── LOJA — CATÁLOGO ──
 // images: array de caminhos. O primeiro é exibido no card.
