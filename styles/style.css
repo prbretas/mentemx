@@ -2835,6 +2835,87 @@ footer {
 }
 
 /* ══════════════════════════════════════════════════════
+   MICROINTERAÇÕES PREMIUM — Issue #20
+   ══════════════════════════════════════════════════════ */
+
+/* Glow laranja nos cards de serviço ao hover */
+.serv-card:hover {
+    transform: translateY(-6px);
+    border-color: var(--orange);
+    box-shadow: 0 8px 32px rgba(255, 107, 0, .15), 0 0 0 1px rgba(255, 107, 0, .1)
+}
+
+/* Glow nos cards de campeões */
+.champ-card:hover {
+    transform: translateY(-6px);
+    border-color: var(--orange);
+    box-shadow: 0 8px 24px rgba(255, 107, 0, .12)
+}
+
+/* Shake sutil nos CTAs ao hover */
+.btn-primary:hover,
+.nav-cta:hover {
+    animation: shake .4s ease-in-out
+}
+
+@keyframes shake {
+    0%, 100% { transform: translateX(0) }
+    20% { transform: translateX(-2px) }
+    40% { transform: translateX(2px) }
+    60% { transform: translateX(-1px) }
+    80% { transform: translateX(1px) }
+}
+
+/* Ripple effect nos botões de serviço */
+.btn-serv {
+    position: relative;
+    overflow: hidden
+}
+
+.btn-serv::after {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 0;
+    height: 0;
+    border-radius: 50%;
+    background: rgba(255, 255, 255, .2);
+    transform: translate(-50%, -50%);
+    transition: width .5s ease, height .5s ease, opacity .5s ease;
+    opacity: 0
+}
+
+.btn-serv:active::after {
+    width: 300px;
+    height: 300px;
+    opacity: 1;
+    transition: 0s
+}
+
+/* Transição mais elaborada nos sport cards */
+.sport-card:hover {
+    border-color: var(--green);
+    transform: translateY(-4px);
+    box-shadow: 0 6px 20px rgba(46, 204, 64, .1)
+}
+
+/* Hover suave nos FAQ items */
+.faq-item:hover {
+    border-color: rgba(255, 107, 0, .3)
+}
+
+/* Glow no botão submit */
+.btn-submit:hover {
+    box-shadow: 0 4px 20px rgba(46, 204, 64, .3)
+}
+
+/* Respeitar preferência de movimento reduzido */
+@media (prefers-reduced-motion: reduce) {
+    .btn-primary:hover,
+    .nav-cta:hover {
+        animation: none
+    }
    DARK/LIGHT MODE — Issue #16
    ══════════════════════════════════════════════════════ */
 
