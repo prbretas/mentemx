@@ -39,7 +39,7 @@ npx playwright test
 
 ### 2. Hero
 - [ ] Vídeo de fundo carrega e reproduz
-- [ ] Botão "Saiba Mais" linka para #servicos
+- [ ] Botão "Saiba Mais" linka para #
 - [ ] Botão "Ver Campeões" linka para #campeoes
 
 ### 3. Stats (Contadores)
